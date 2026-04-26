@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing · SAMASE Sports Club — Founding Member Pre-Opening</title>
+  <meta name="description" content="Harga Founding Member SAMASE Sports Club. Open Gym, Private Training 1-on-1 & Duo, Group Class, Private Class, Golden FitSpace 50+. Diskon hingga 30% hingga gelombang Visionary penuh." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200..900;1,200..900&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="src/tokens.css" />
+  <link rel="stylesheet" href="src/warm.css" />
+  <link rel="stylesheet" href="src/deep.css" />
+  <link rel="stylesheet" href="src/stone.css" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    html, body { background: #F2EEE5; scroll-behavior: smooth; }
+    body.body-dark { background: #141414; }
+    body.variant-stone { background: #F3F3F1; }
+    #root { min-height: 100vh; }
+  </style>
+</head>
+<body class="variant-warm">
+  <div id="root"></div>
+
+  <!-- CMS store + defaults -->
+  <script src="src/cms-store.js?v=2?v=1"></script>
+  <script type="text/babel" src="src/content.js?v=12"></script>
+
+  <script type="text/babel" src="src/SamaseMark.js?v=10"></script>
+  <script type="text/babel" src="src/Pricing.js?v=2"></script>
+
+  <script type="text/babel">
+    // Apply palette from CMS store
+    function applyUiFromStore() {
+      const S = window.SAMASE || {};
+      const ui = S.ui || {};
+      const variant = ui.variant || 'warm';
+      document.body.classList.remove('variant-warm', 'variant-deep', 'variant-stone');
+      document.body.classList.add('variant-' + variant);
+      document.body.classList.toggle('body-dark', variant === 'deep');
+    }
+    applyUiFromStore();
+    if (window.CMSStore) {
+      window.CMSStore.subscribe(applyUiFromStore);
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<PricingPage />);
+  </script>
+</body>
+</html>

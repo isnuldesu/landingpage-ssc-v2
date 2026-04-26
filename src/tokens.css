@@ -1,0 +1,129 @@
+/* SAMASE Design Tokens — base layer */
+
+:root {
+  /* Type */
+  --font-display: 'Exo 2', 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter Tight', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Display weights */
+  --weight-display: 800;  /* ExtraBold — used for all H1-H4, .samase-display */
+
+  /* Spacing scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+
+  /* Radius */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+
+  /* Default (warm) — overridden by skin */
+  --bg: #FAF7F1;
+  --bg-elev: #F3EEE4;
+  --bg-card: #FFFFFF;
+  --ink: #1C1A17;
+  --ink-soft: #433E36;
+  --ink-mute: #776F63;
+  --line: #E3DCCB;
+  --line-soft: #EDE7D9;
+  --accent: #6B5842;
+  --accent-soft: #A68D6F;
+  --gold: #B89467;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+}
+
+.samase-mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.samase-display {
+  font-family: var(--font-display);
+  font-weight: 350;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.samase-serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 350;
+}
+
+/* Shared primitive classes */
+.samase-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 720px) {
+  .samase-container { padding: 0 20px; }
+}
+
+.hairline { height: 1px; background: var(--line); width: 100%; }
+.hairline-soft { height: 1px; background: var(--line-soft); width: 100%; }
+
+button { font-family: inherit; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+
+/* Scroll anchor offset */
+[id^="section-"] { scroll-margin-top: 40px; }
+
+/* Selection */
+::selection { background: var(--ink); color: var(--bg); }
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 900ms cubic-bezier(.2,.6,.2,1), transform 900ms cubic-bezier(.2,.6,.2,1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+ * Force all display headings to ExtraBold (Exo 2).
+ * !important wins over inline React fontWeight values,
+ * so this overrides legacy fontWeight: 300/200 in JSX files
+ * without requiring mass edits.
+ * ───────────────────────────────────────────── */
+h1, h2, h3, h4,
+.samase-display {
+  font-family: var(--font-display) !important;
+  font-weight: var(--weight-display) !important;
+  letter-spacing: -0.025em !important;
+}
+.samase-serif-italic {
+  font-family: var(--font-display) !important;
+  font-weight: var(--weight-display) !important;
+  font-style: italic !important;
+  letter-spacing: -0.02em !important;
+}

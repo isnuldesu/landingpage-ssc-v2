@@ -1,0 +1,25 @@
+/* Stone — cool neutral, modernist minimal — v3 */
+body.variant-stone {
+  --bg: #F3F3F1;
+  --bg-elev: #E9E8E4;
+  --bg-card: #FFFFFF;
+  --ink: #17181A;
+  --ink-soft: #3C3E41;
+  --ink-mute: #737679;
+  --line: #D8D8D4;
+  --line-soft: #E6E5E1;
+  --accent: #3D4247;
+  --accent-soft: #6B7075;
+  --gold: #8E8474;
+
+  /* Signature sections */
+  --founding-bg: #2B3137;
+  --founding-bg-2: #1F2428;
+  --founding-ink: #F3F3F1;
+  --founding-accent: #C4B898;
+  --footer-bg: #1A1D20;
+
+  /* Form CTA */
+  --form-cta: #17181A;
+  --form-cta-ink: #F3F3F1;
+}

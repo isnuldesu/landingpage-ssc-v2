@@ -1,0 +1,31 @@
+/* Warm — matches samasesportsclub.com reference
+ * Palette inspired by the brand site: creamy off-white background,
+ * rich terracotta accents, warm brown inks.
+ */
+body.variant-warm {
+  --bg: #F2EEE5;              /* off-white cream — matches brand site */
+  --bg-elev: #EAE3D4;         /* slightly deeper cream for elevated surfaces */
+  --bg-card: #FFFFFF;         /* pure white cards for contrast */
+
+  --ink: #2A1F17;             /* deep warm brown — headings */
+  --ink-soft: #4A3A2C;        /* softer warm brown — body */
+  --ink-mute: #7A6A5A;        /* muted warm brown — captions */
+
+  --line: #D8CFBE;            /* warm line */
+  --line-soft: #E4DCCB;       /* softer line */
+
+  --accent: #A94E2C;          /* signature terracotta — from brand logo */
+  --accent-soft: #C56A44;     /* lighter terracotta */
+  --gold: #C68B5E;             /* warm tan accent */
+
+  /* Signature section colors */
+  --founding-bg: #A94E2C;         /* terracotta — brand signature */
+  --founding-bg-2: #8A3E20;       /* terracotta deep */
+  --founding-ink: #F2EEE5;        /* warm cream text on terracotta */
+  --founding-accent: #E8B88A;     /* soft sand accent */
+  --footer-bg: #2A1F17;           /* deep brown footer */
+
+  /* Form CTA */
+  --form-cta: #A94E2C;
+  --form-cta-ink: #F2EEE5;
+}

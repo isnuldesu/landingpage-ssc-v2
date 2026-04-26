@@ -1,0 +1,4765 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAMASE Sports Club — Exclusive Active Lifestyle Club</title>
+  <meta name="description" content="SAMASE Sports Club. Exclusive active lifestyle club. Modern, sophisticated, privacy-first." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter+Tight:wght@400;500;600;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>/* SAMASE Design Tokens — base layer */
+
+:root {
+  /* Type */
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-body: 'Inter Tight', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Spacing scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+
+  /* Radius */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+
+  /* Default (warm) — overridden by skin */
+  --bg: #FAF7F1;
+  --bg-elev: #F3EEE4;
+  --bg-card: #FFFFFF;
+  --ink: #1C1A17;
+  --ink-soft: #433E36;
+  --ink-mute: #776F63;
+  --line: #E3DCCB;
+  --line-soft: #EDE7D9;
+  --accent: #6B5842;
+  --accent-soft: #A68D6F;
+  --gold: #B89467;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+}
+
+.samase-mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.samase-display {
+  font-family: var(--font-display);
+  font-weight: 350;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.samase-serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 350;
+}
+
+/* Shared primitive classes */
+.samase-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 720px) {
+  .samase-container { padding: 0 20px; }
+}
+
+.hairline { height: 1px; background: var(--line); width: 100%; }
+.hairline-soft { height: 1px; background: var(--line-soft); width: 100%; }
+
+button { font-family: inherit; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+
+/* Scroll anchor offset */
+[id^="section-"] { scroll-margin-top: 40px; }
+
+/* Selection */
+::selection { background: var(--ink); color: var(--bg); }
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 900ms cubic-bezier(.2,.6,.2,1), transform 900ms cubic-bezier(.2,.6,.2,1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+  <style>/* Warm — matches samasesportsclub.com reference
+ * Palette inspired by the brand site: creamy off-white background,
+ * rich terracotta accents, warm brown inks.
+ */
+body.variant-warm {
+  --bg: #F2EEE5;              /* off-white cream — matches brand site */
+  --bg-elev: #EAE3D4;         /* slightly deeper cream for elevated surfaces */
+  --bg-card: #FFFFFF;         /* pure white cards for contrast */
+
+  --ink: #2A1F17;             /* deep warm brown — headings */
+  --ink-soft: #4A3A2C;        /* softer warm brown — body */
+  --ink-mute: #7A6A5A;        /* muted warm brown — captions */
+
+  --line: #D8CFBE;            /* warm line */
+  --line-soft: #E4DCCB;       /* softer line */
+
+  --accent: #A94E2C;          /* signature terracotta — from brand logo */
+  --accent-soft: #C56A44;     /* lighter terracotta */
+  --gold: #C68B5E;             /* warm tan accent */
+
+  /* Signature section colors */
+  --founding-bg: #A94E2C;         /* terracotta — brand signature */
+  --founding-bg-2: #8A3E20;       /* terracotta deep */
+  --founding-ink: #F2EEE5;        /* warm cream text on terracotta */
+  --founding-accent: #E8B88A;     /* soft sand accent */
+  --footer-bg: #2A1F17;           /* deep brown footer */
+
+  /* Form CTA */
+  --form-cta: #A94E2C;
+  --form-cta-ink: #F2EEE5;
+}
+</style>
+  <style>/* Deep — dark editorial with sage/mint accent */
+body.variant-deep {
+  --bg: #141414;
+  --bg-elev: #1C1C1C;
+  --bg-card: #1F1F1E;
+  --ink: #F1ECE2;
+  --ink-soft: #C7BFB0;
+  --ink-mute: #8A8170;
+  --line: #2E2D2A;
+  --line-soft: #242321;
+  --accent: #C2A57F;
+  --accent-soft: #8E7757;
+  --gold: #D4B585;
+
+  /* Signature sections — sage/teal contrast for warmth */
+  --founding-bg: #2D4A44;         /* deep sage — calm counter */
+  --founding-bg-2: #1F3834;       /* sage deep */
+  --founding-ink: #EAE4D5;        /* warm cream text */
+  --founding-accent: #A8D0BF;     /* mint accent */
+  --footer-bg: #0E0E0E;
+  --form-cta: #A8D0BF;            /* mint CTA */
+  --form-cta-ink: #1C1A17;
+}
+</style>
+  <style>/* Stone — cool neutral, modernist minimal — v3 */
+body.variant-stone {
+  --bg: #F3F3F1;
+  --bg-elev: #E9E8E4;
+  --bg-card: #FFFFFF;
+  --ink: #17181A;
+  --ink-soft: #3C3E41;
+  --ink-mute: #737679;
+  --line: #D8D8D4;
+  --line-soft: #E6E5E1;
+  --accent: #3D4247;
+  --accent-soft: #6B7075;
+  --gold: #8E8474;
+
+  /* Signature sections */
+  --founding-bg: #2B3137;
+  --founding-bg-2: #1F2428;
+  --founding-ink: #F3F3F1;
+  --founding-accent: #C4B898;
+  --footer-bg: #1A1D20;
+
+  /* Form CTA */
+  --form-cta: #17181A;
+  --form-cta-ink: #F3F3F1;
+}
+</style>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    html, body { background: #F2EEE5; scroll-behavior: smooth; }
+    body.body-dark { background: #141414; }
+    body.variant-stone { background: #F3F3F1; }
+    #root { min-height: 100vh; }
+  </style>
+</head>
+<body class="variant-warm">
+  <div id="root"></div>
+
+  <script type="text/babel">// SAMASE — canonical copy/content
+// Partner: Bebascedera — https://bebascedera.com/
+// Pricing source: Meeting Guide — SAMASE × Isnul · Jumat April 2026
+
+const SAMASE = {
+  brand: {
+    name: 'SAMASE Sports Club',
+    tag: 'SAMASE · PRE-OPENING 2026',
+    opening: 'Juli 2026',
+    city: 'Jakarta — Bintaro',
+    // Legacy slot counter (used by Hybrid mode as "early applicants")
+    slotsTaken: 182,
+    slotsTotal: 528,
+    // Countdown target (for Soft/Hybrid scarcity modes)
+    openingDate: '2026-07-01T00:00:00+07:00',
+    // Closing date for founding campaign
+    closingDate: '2026-06-15T23:59:00+07:00',
+  },
+
+  hero: {
+    kicker: 'SAMASE · PRE-OPENING 2026',
+    titleTop: 'Ruang tenang',
+    titleMid: 'untuk tubuh yang',
+    titleBot: 'dijaga dengan niat.',
+    lede: 'SAMASE Sports Club — Exclusive Active Lifestyle Club. Modern, sophisticated, privacy-first. Klub gaya hidup aktif untuk mereka yang memilih bergerak tanpa tuntutan tampil.',
+    meta1Label: 'Juli',
+    meta1Value: '2026 · Grand Opening',
+    meta2Label: 'Bintaro',
+    meta2Value: 'Location Reveal Soon',
+    footer: 'Ruang sedang dibangun. Komunitas sudah dimulai.',
+  },
+
+  philosophy: {
+    number: '01',
+    kicker: 'Filosofi',
+    title: 'Menjaga tubuh, dengan tenang.',
+    quote: '"Quiet Structure" — ketenangan adalah dasar dari konsistensi.',
+    body: [
+      'Di tengah ritme urban yang padat, SAMASE hadir sebagai ruang olahraga yang dirancang dan dijaga dengan tenang. Tempat untuk bergerak tanpa tuntutan tampil, tanpa kebisingan, tanpa penilaian.',
+      'Kami percaya kekuatan sejati tidak agresif. Ia stabil, konsisten, dan berkelanjutan — seperti struktur yang tersusun rapi.',
+    ],
+    pillars: [
+      { n: '01', title: 'Modern', body: 'Fasilitas, metode, dan pendekatan yang mutakhir — tanpa berlebihan.' },
+      { n: '02', title: 'Sophisticated', body: 'Estetika yang tenang, layanan yang presisi, detail yang dijaga.' },
+      { n: '03', title: 'Privacy-First', body: 'Ruang yang menghargai batas personal. No judgement zone.' },
+    ],
+  },
+
+  // Audience reordered by campaign priority:
+  // High: Lansia, Akhwat, Bapak-bapak · Entry: Young Adult · Medium: Kids
+  audience: {
+    number: '02',
+    kicker: 'Untuk Siapa',
+    title: 'Dirancang untuk yang ingin bergerak dengan tenang.',
+    lede: 'Kami tidak untuk semua orang — dan itu bagian dari filosofinya. Setiap persona dirancang dengan ruang, jadwal, dan program yang sesuai.',
+    personas: [
+      {
+        n: '01',
+        title: 'Lansia Aktif',
+        age: '55+ · Golden Member',
+        priority: 'Priority · High',
+        hook: 'Aktif di usia 60+, ibadah lebih khusyuk.',
+        body: 'Bergerak bijaksana untuk umur panjang. Didampingi coach khusus 50+ dengan fisioterapi preventif dan program yang menyesuaikan kondisi tubuh.',
+        fit: ['Golden FitSpace PT', 'Fisioterapi Bebascedera', 'Group Class ringan'],
+      },
+      {
+        n: '02',
+        title: 'Akhwat / Muslimah',
+        age: '28–50 · Women-only space',
+        priority: 'Priority · High',
+        hook: 'Safe space untuk bergerak tanpa rasa sungkan.',
+        body: 'Jadwal, area, dan coach khusus muslimah. Privasi tinggi, pemulihan postpartum, atau kembali aktif setelah lama berhenti — semua dijaga dengan hormat.',
+        fit: ['Women PT / Duo PT', 'Women-only Group Class', 'Open Gym Women Session'],
+      },
+      {
+        n: '03',
+        title: 'Bapak / Laki-laki Dewasa',
+        age: '30+ · Profesional urban',
+        priority: 'Priority · High',
+        hook: 'Postur profesional, performa meningkat.',
+        body: 'Untuk yang duduk panjang di kantor, nyeri punggung berulang, dan butuh program yang cerdas — bukan culture gym hardcore. Olahraga sebagai investasi, bukan estetika.',
+        fit: ['Men PT', 'Open Gym', 'Group Class', 'Padel'],
+      },
+      {
+        n: '04',
+        title: 'Young Adult',
+        age: '20–30 · Entry segment',
+        priority: 'Entry · Awareness',
+        hook: 'Mulai olahraga tanpa awkward.',
+        body: 'Untuk yang ingin serius tapi tidak cocok dengan vibe gym judgmental. Komunitas supportif, postur assessment gratis, dan pendekatan realistis.',
+        fit: ['Open Gym', 'Group Class', 'Padel'],
+      },
+      {
+        n: '05',
+        title: 'Kids & Teens',
+        age: '8–19 · Via orang tua',
+        priority: 'Secondary · Medium',
+        hook: 'Postur optimal, tumbuh maksimal.',
+        body: 'Program anak & remaja — postur, agility, dan growth support. Alternatif sehat untuk screen time, dibimbing coach bersertifikasi.',
+        fit: ['Program Anak', 'Group Class Teens', 'Fisioterapi tumbuh kembang'],
+      },
+    ],
+  },
+
+  facilities: {
+    number: '03',
+    kicker: 'Fasilitas',
+    title: 'Fasilitas yang dijaga dengan niat.',
+    lede: 'Tidak untuk memamerkan — untuk mendukung pergerakan yang bermakna.',
+    items: [
+      {
+        n: '01', title: 'Group Class Studio',
+        body: 'Kelas terkurasi dengan kapasitas kecil (3–10 orang). Fokus pada form, ritme, dan konsistensi.',
+        photos: [
+          { label: 'Studio overview', caption: 'Studio lantai kayu, kapasitas 3–10 orang' },
+          { label: 'Morning class', caption: 'Jadwal pagi untuk muslimah' },
+          { label: 'Mobility corner', caption: 'Area stretch & warm-up' },
+        ],
+      },
+      {
+        n: '02', title: 'Private Training',
+        body: 'Sesi 1-on-1 & 2-on-1 dengan coach bersertifikasi. Program dipersonalisasi dari hasil screening.',
+        photos: [
+          { label: 'PT session', caption: 'Sesi 1-on-1 di private corner' },
+          { label: 'Duo training', caption: 'Duo session 2-on-1' },
+          { label: 'Equipment', caption: 'Functional & free-weight area' },
+        ],
+      },
+      {
+        n: '03', title: 'Fisioterapi — Bebascedera',
+        body: 'Kolaborasi dengan tim fisioterapi tersertifikasi. Postur, pemulihan, dan pencegahan cedera.',
+        photos: [
+          { label: 'Screening room', caption: 'Postural screening & assessment' },
+          { label: 'Treatment area', caption: 'Area fisioterapi private' },
+          { label: 'Recovery tools', caption: 'Soft release & mobility tools' },
+        ],
+      },
+      {
+        n: '04', title: 'Open Gym — Women & Men',
+        body: 'Functional zone, recovery corner, dan loker. Jadwal dan area terpisah untuk muslimah.',
+        photos: [
+          { label: 'Women FitSpace', caption: 'Area eksklusif untuk muslimah' },
+          { label: 'Men FitSpace', caption: 'Area functional & strength' },
+          { label: 'Recovery lounge', caption: 'Sauna, stretching, quiet zone' },
+        ],
+      },
+      {
+        n: '05', title: 'Golden FitSpace',
+        body: 'Area & program khusus lansia 50+. Tempo lembut, coach khusus, fisioterapi preventif.',
+        photos: [
+          { label: 'Senior studio', caption: 'Tempo lembut, lantai anti-slip' },
+          { label: 'Balance training', caption: 'Program stability 50+' },
+          { label: 'Community', caption: 'Social hour setelah kelas' },
+        ],
+      },
+      {
+        n: '06', title: 'Padel Court',
+        body: 'Lapangan padel premium untuk rekreasi & social play. Terintegrasi dengan komunitas members.',
+        photos: [
+          { label: 'Court overview', caption: 'Lapangan premium outdoor' },
+          { label: 'Social play', caption: 'Weekend community match' },
+          { label: 'Club house', caption: 'Lounge & refreshment' },
+        ],
+      },
+    ],
+  },
+
+  physio: {
+    number: '04',
+    kicker: 'Fisioterapi × Bebascedera',
+    title: 'Dari screening, ke program, ke pergerakan yang benar.',
+    lede: 'Kolaborasi bersama Bebascedera — tim fisioterapi tersertifikasi. Pendekatan kami: pahami postur dulu, baru rekomendasikan program. Tidak ada program yang dipaksakan.',
+    steps: [
+      { n: '01', title: 'Postural Screening', meta: '15–20 menit', body: 'Pemetaan postur cepat dan root-cause analysis. Gratis untuk calon Founding Member — kami pelajari keluhan, riwayat, dan pola gerak Anda.' },
+      { n: '02', title: 'Assessment & Persona', meta: 'Konsultasi mendalam', body: 'Berdasar screening — usia, kondisi, riwayat, tujuan — kami susun persona latihan yang realistis dan aman.' },
+      { n: '03', title: 'Program Suitability', meta: 'Recommendation → Action', body: 'Rekomendasi program yang paling cocok: Group Class, Private Training, atau Golden FitSpace. Realistis, bukan yang paling agresif.' },
+    ],
+    partner: {
+      label: 'In collaboration with',
+      name: 'Bebascedera',
+      url: 'https://bebascedera.com/',
+      body: 'Tim fisioterapi tersertifikasi — fokus pada prevention, assessment, dan performance recovery.',
+    },
+  },
+
+  // ========================================================
+  // Founding Member — Batch/Gelombang system
+  // Visionary (earliest) → Pioneer → Founder (latest)
+  // Quota per batch adjustable via CMS.
+  // ========================================================
+  founding: {
+    number: '05',
+    kicker: 'Founding Member',
+    title: 'Tiga gelombang. Satu kesempatan.',
+    lede: 'Founding Member dibuka dalam 3 gelombang eksklusif. Semakin awal Anda bergabung, semakin hemat dan semakin banyak benefit yang Anda terima. Setelah satu gelombang penuh, harga naik ke gelombang berikutnya.',
+    // Scarcity modes: 'hard' | 'soft' | 'hybrid'
+    //   hard  — show numbers: "38/80 Visionary slots terisi"
+    //   soft  — hide numbers: "Almost full" + countdown
+    //   hybrid — show applicants count but not total: "58 Visionary applicants · closes 15 Juni"
+    scarcityMode: 'hard',
+    batches: [
+      {
+        id: 'visionary',
+        label: 'Visionary',
+        gelombang: 'Gelombang 01 · Earliest',
+        tagline: 'Diskon terdalam. Akses pertama. Benefit terlengkap.',
+        slotsTaken: 58,
+        slotsTotal: 80,
+        priceOpenGym3M: 1100000,
+        priceOpenGym3MNormal: 1590000,
+        status: 'active', // active | upcoming | closed
+        badge: 'Sedang Dibuka',
+        // Lead-magnet stack — decrements with each batch
+        perks: [
+          'Diskon 30%+ untuk semua paket (Open Gym, PT, Duo, Group Class)',
+          'Free Postural Screening di Bebascedera (15–20 menit)',
+          'Free trial 2 sesi Group Class / Open Gym',
+          'Free konsultasi 30 menit dengan coach senior',
+          'Free 2 sesi bonus untuk paket PT (Body Rebuild ke atas)',
+          'SAMASE Welcome Kit — tote + botol + handuk + merch',
+          'Lock-in harga ini seumur renewal',
+          'Founding Gathering eksklusif sebelum grand opening',
+          'Prioritas booking PT & Fisioterapi selamanya',
+          'Akses komunitas WhatsApp eksklusif Visionary-only',
+        ],
+      },
+      {
+        id: 'pioneer',
+        label: 'Pioneer',
+        gelombang: 'Gelombang 02 · Early',
+        tagline: 'Momentum berjalan. Harga naik, benefit tetap kuat.',
+        slotsTaken: 0,
+        slotsTotal: 120,
+        priceOpenGym3M: 1300000,
+        priceOpenGym3MNormal: 1590000,
+        status: 'upcoming',
+        badge: 'Setelah Visionary Penuh',
+        perks: [
+          'Diskon 18%+ untuk semua paket',
+          'Free Postural Screening di Bebascedera (15–20 menit)',
+          'Free trial 1 sesi Group Class / Open Gym',
+          'Free konsultasi 20 menit dengan coach',
+          'Free 1 sesi bonus untuk paket PT (Body Rebuild ke atas)',
+          'SAMASE Welcome Kit — tote + botol',
+          'Founding Gathering eksklusif sebelum grand opening',
+          'Prioritas booking PT & Fisioterapi',
+          'Akses komunitas WhatsApp Founding Members',
+        ],
+      },
+      {
+        id: 'founder',
+        label: 'Founder',
+        gelombang: 'Gelombang 03 · Final',
+        tagline: 'Kesempatan terakhir sebelum grand opening.',
+        slotsTaken: 0,
+        slotsTotal: 150,
+        priceOpenGym3M: 1450000,
+        priceOpenGym3MNormal: 1590000,
+        status: 'upcoming',
+        badge: 'Setelah Pioneer Penuh',
+        perks: [
+          'Diskon 9%+ untuk semua paket',
+          'Free Postural Screening di Bebascedera (15–20 menit)',
+          'Free konsultasi 15 menit dengan coach',
+          'SAMASE Tote sebagai welcome token',
+          'Founding Gathering eksklusif sebelum grand opening',
+          'Akses komunitas WhatsApp Founding Members',
+        ],
+      },
+    ],
+    disclaimer: 'Penawaran berlaku hingga kuota masing-masing gelombang terisi, atau sampai 15 Juni 2026 — mana yang tercapai lebih dulu. Setelah grand opening Juli 2026, harga akan kembali ke harga normal.',
+    ctaLabel: 'Lihat Harga & Paket',
+    ctaLabelShort: 'Amankan Slot Saya',
+  },
+
+  coach: {
+    number: '06',
+    kicker: 'Tim Coach',
+    title: 'Dipandu oleh tim yang paham tubuh dan tujuan Anda.',
+    body: 'Semua coach SAMASE bersertifikasi dan melewati kurasi internal — kami memastikan cara mengajar yang tenang, bertanggung jawab, dan fokus pada jangka panjang. Tidak ada program template. Setiap sesi disesuaikan dengan postur, riwayat, dan tujuan Anda.',
+    consultLabel: 'Konsultasi gratis 15–30 menit bersama salah satu coach tersedia untuk calon Founding Member.',
+    ctaLabel: 'Jadwalkan Konsultasi Gratis',
+    team: [
+      {
+        name: 'Coach Raihan',
+        role: 'Head of Movement',
+        specialty: 'Longevity · Functional Training',
+        bio: 'Lebih dari satu dekade memandu klien urban — dari profesional sibuk hingga lansia aktif — membangun kekuatan yang berkelanjutan.',
+        photo: null, // placeholder; swap with real portrait
+        tags: ['1-on-1', 'Golden 50+', 'Rehab'],
+      },
+      {
+        name: 'Coach Laras',
+        role: 'Women Program Lead',
+        specialty: 'Women Training · Postnatal',
+        bio: 'Sertifikasi pre & postnatal training. Mengkhususkan diri pada pemulihan pasca melahirkan, core integrity, dan program khusus muslimah.',
+        photo: null,
+        tags: ['Women FitSpace', 'Group Class', '2-on-1'],
+      },
+      {
+        name: 'Coach Dimas',
+        role: 'Strength & Conditioning',
+        specialty: 'Hypertrophy · Athletic Performance',
+        bio: 'Background atletik nasional, fokus pada pria dewasa yang ingin membangun kekuatan, postur, dan performa tanpa cedera.',
+        photo: null,
+        tags: ['Men FitSpace', 'Private PT', 'Performance'],
+      },
+      {
+        name: 'Coach Nadia',
+        role: 'Movement & Mobility',
+        specialty: 'Yoga · Pilates · Group Class',
+        bio: 'Spesialis mobility, breath work, dan gerakan mindful. Memimpin group class di studio dan program recovery.',
+        photo: null,
+        tags: ['Group Class', 'Recovery', 'Community'],
+      },
+    ],
+  },
+
+  faq: {
+    number: '07',
+    kicker: 'Pertanyaan',
+    title: 'Hal-hal yang biasa ditanyakan.',
+    items: [
+      { q: 'Apakah SAMASE sudah buka?', a: 'Belum. Kami sedang dalam tahap pembangunan fisik dan soft-launch komunitas di Bintaro. Grand opening dijadwalkan Juli 2026. Founding Member membership dibuka sekarang dengan akses bertahap.' },
+      { q: 'Apa beda 3 gelombang Visionary, Pioneer, dan Founder?', a: 'Visionary = gelombang pertama (earliest adopters) — diskon paling dalam, benefit paling lengkap. Pioneer = gelombang kedua, harga naik sedikit tapi benefit tetap kuat. Founder = gelombang terakhir sebelum grand opening — kesempatan terakhir dengan harga pre-opening. Setelah satu gelombang penuh, akan pindah otomatis ke gelombang berikutnya.' },
+      { q: 'Apakah saya wajib beli paket full sekarang?', a: 'Tidak. Anda cukup isi form pendaftaran. Tim kami akan hubungi Anda untuk jadwalkan trial class & Postural Screening gratis di Bebascedera. Setelah itu, Anda bebas memilih paket yang paling cocok — atau mundur sepenuhnya.' },
+      { q: 'Siapa yang cocok untuk SAMASE?', a: 'SAMASE adalah exclusive active lifestyle club — terbuka untuk siapa saja yang ingin bergerak dengan tenang dan terstruktur. Tidak harus atletis, tidak harus sudah fit. Kami menghargai privasi dan mendukung mereka yang ingin mulai aktif tanpa tekanan sosial.' },
+      { q: 'Bagaimana SAMASE menjaga privasi?', a: 'Layout dengan private corners, kode etik yang sopan dan tenang, jadwal kelas yang dikurasi, no-photo areas, dan member space yang tidak untuk tontonan publik. Fokus pada latihan, bukan dokumentasi.' },
+      { q: 'Apakah ada jadwal khusus untuk muslimah?', a: 'Ya. Kami menyediakan jadwal, area (Women FitSpace), dan coach khusus muslimah. Privasi tinggi, semua coach perempuan untuk kelas khusus, dan layout yang dipisah. Detail teknis akan dibagikan saat onboarding Founding Member.' },
+      { q: 'Apakah ada program untuk lansia?', a: 'Ya. Golden FitSpace adalah area dan program khusus untuk usia 50+. Coach khusus, tempo yang menyesuaikan, dan fisioterapi preventif bersama Bebascedera. Cocok untuk yang ingin tetap aktif & kuat di usia lanjut.' },
+      { q: 'Bagaimana kerjasama dengan Bebascedera bekerja?', a: 'Kolaborasi dengan tim fisioterapi tersertifikasi. Setiap Founding Member mendapat satu sesi postural screening. Hasilnya memetakan program latihan yang paling cocok. Tidak ada program yang dipaksakan.' },
+    ],
+  },
+
+  form: {
+    number: '08',
+    kicker: 'Daftar',
+    title: 'Amankan slot Anda.',
+    lede: 'Isi form singkat di bawah. Tim kami akan menghubungi Anda dalam 1×24 jam untuk menjadwalkan Postural Screening gratis di Bebascedera, trial class, dan konsultasi dengan coach.',
+    benefitsHead: 'Apa yang Anda dapat setelah daftar',
+  },
+
+  // Tambahan copy untuk mode scarcity berbeda
+  scarcityCopy: {
+    hard: {
+      headline: 'Quota terbatas per gelombang.',
+      sub: 'Lihat progress real-time di bawah.',
+    },
+    soft: {
+      headline: 'Gelombang pre-opening akan segera ditutup.',
+      sub: 'By application only. Registrasi ditutup 15 Juni 2026.',
+    },
+    hybrid: {
+      headline: 'Bergabung dengan ratusan early applicants.',
+      sub: 'Registrasi ditutup 15 Juni 2026 — atau lebih cepat saat gelombang penuh.',
+    },
+  },
+};
+
+window.SAMASE = SAMASE;
+</script>
+  <script type="text/babel">// SAMASE — brand mark
+// Default monogram/wordmark SVGs are inlined below for offline use.
+// To swap: paste the official SVG source into brand/monogram.svg /
+// brand/wordmark.svg and set window.SAMASE_LOGO = { monogram: 'brand/...' },
+// or upload via Admin Panel → Brand tab (uses a Blob URL from localStorage).
+
+// Default inline SVGs (baked in so standalone export works offline)
+const DEFAULT_MONOGRAM_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" aria-label="SAMASE">
+  <g fill="currentColor">
+    <path d="M 20 14 L 116 14 L 124 20 L 120 46 L 20 46 A 16 16 0 0 1 4 30 A 16 16 0 0 1 20 14 Z"/>
+    <path d="M 40 58 L 120 58 L 120 82 L 40 82 A 12 12 0 0 1 28 70 A 12 12 0 0 1 40 58 Z"/>
+    <path d="M 20 94 L 116 94 L 124 100 L 120 126 L 40 126 A 20 20 0 0 1 4 114 A 16 16 0 0 1 4 110 L 4 106 A 16 16 0 0 1 20 94 Z"/>
+    <path d="M 220 14 L 124 14 L 116 20 L 120 46 L 220 46 A 16 16 0 0 0 236 30 A 16 16 0 0 0 220 14 Z"/>
+    <path d="M 200 58 L 120 58 L 120 82 L 200 82 A 12 12 0 0 0 212 70 A 12 12 0 0 0 200 58 Z"/>
+    <path d="M 220 94 L 124 94 L 116 100 L 120 126 L 200 126 A 20 20 0 0 0 236 114 A 16 16 0 0 0 236 110 L 236 106 A 16 16 0 0 0 220 94 Z"/>
+    <path d="M 112 14 L 128 14 L 124 20 L 116 20 Z"/>
+  </g>
+</svg>`;
+
+const DEFAULT_WORDMARK_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" aria-label="SAMASE SPORTS CLUB">
+  <text x="160" y="72" text-anchor="middle" font-family="'Inter Tight', system-ui, sans-serif" font-weight="900" font-size="72" letter-spacing="2" fill="currentColor">SAMASE</text>
+  <text x="160" y="128" text-anchor="middle" font-family="'Inter Tight', system-ui, sans-serif" font-weight="800" font-size="40" letter-spacing="4" fill="currentColor">SPORTS CLUB</text>
+</svg>`;
+
+// External file paths (used only if window.SAMASE_LOGO override)
+const DEFAULT_MONOGRAM_URL = 'brand/monogram.svg';
+const DEFAULT_WORDMARK_URL = 'brand/wordmark.svg';
+
+function getLogoPaths() {
+  const override = (typeof window !== 'undefined' && window.SAMASE_LOGO) || {};
+  return {
+    monogram: override.monogram || DEFAULT_MONOGRAM_URL,
+    wordmark: override.wordmark || DEFAULT_WORDMARK_URL,
+  };
+}
+
+// Tick state to re-render when window.SAMASE_LOGO updates (via admin upload)
+function useLogoPaths() {
+  const [tick, setTick] = React.useState(0);
+  React.useEffect(() => {
+    const handler = () => setTick(t => t + 1);
+    window.addEventListener('samase:logo-update', handler);
+    window.addEventListener('storage', handler);
+    return () => {
+      window.removeEventListener('samase:logo-update', handler);
+      window.removeEventListener('storage', handler);
+    };
+  }, []);
+  return getLogoPaths();
+}
+
+function SamaseMark({ size = 22, subtitle = null, variant = 'lockup', color }) {
+  const paths = useLogoPaths();
+  const hasOverride = !!(typeof window !== 'undefined' && window.SAMASE_LOGO);
+
+  const monogram = hasOverride && window.SAMASE_LOGO.monogram
+    ? <InlineSvg
+        src={window.SAMASE_LOGO.monogram}
+        height={size * 1.5}
+        color={color}
+        aspectRatio={240 / 140}
+      />
+    : <InlineSvgFromText
+        svgText={DEFAULT_MONOGRAM_SVG}
+        height={size * 1.5}
+        color={color}
+      />;
+
+  const wordmark = hasOverride && window.SAMASE_LOGO.wordmark
+    ? <InlineSvg
+        src={window.SAMASE_LOGO.wordmark}
+        height={size * 0.82}
+        color={color}
+        aspectRatio={320 / 160}
+      />
+    : <InlineSvgFromText
+        svgText={DEFAULT_WORDMARK_SVG}
+        height={size * 0.82}
+        color={color}
+        widthScale={2}
+      />;
+
+  if (variant === 'monogram') return monogram;
+  if (variant === 'wordmark') return wordmark;
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+      {monogram}
+      <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+        {wordmark}
+        {subtitle && (
+          <span
+            className="samase-mono"
+            style={{
+              fontSize: 9,
+              color: color || 'var(--ink-mute)',
+              opacity: 0.75,
+              marginTop: 5,
+              letterSpacing: '0.18em',
+            }}
+          >
+            {subtitle}
+          </span>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * InlineSvgFromText — renders inline SVG from a string constant.
+ * Used for the default baked-in logos so the page works offline.
+ */
+function InlineSvgFromText({ svgText, height, color, widthScale = 1 }) {
+  // Read viewBox to preserve aspect
+  const vbMatch = svgText.match(/viewBox="([^"]+)"/);
+  const vb = vbMatch ? vbMatch[1].split(/\s+/).map(Number) : [0, 0, 1, 1];
+  const ratio = (vb[2] / vb[3]) * widthScale;
+  const width = height * ratio;
+  return (
+    <span
+      style={{
+        display: 'inline-flex',
+        height,
+        color: color || 'currentColor',
+        alignItems: 'center',
+      }}
+      dangerouslySetInnerHTML={{
+        __html: sizeSvg(svgText, width, height),
+      }}
+    />
+  );
+}
+
+/**
+ * InlineSvg — fetches an SVG file and inlines it so `currentColor`
+ * and CSS variables work. Falls back to <img> on error.
+ * Cached globally to avoid refetching.
+ */
+const _svgCache = {};
+const _svgListeners = {};
+
+function InlineSvg({ src, height, color, aspectRatio = 1 }) {
+  const [svgText, setSvgText] = React.useState(_svgCache[src] || null);
+
+  React.useEffect(() => {
+    if (_svgCache[src]) {
+      setSvgText(_svgCache[src]);
+      return;
+    }
+    if (_svgListeners[src]) {
+      _svgListeners[src].push(setSvgText);
+      return;
+    }
+    _svgListeners[src] = [setSvgText];
+
+    fetch(src)
+      .then(r => r.ok ? r.text() : null)
+      .then(txt => {
+        if (txt) {
+          // Strip XML declaration and any HTML comments, keep <svg>...</svg> only
+          const m = txt.match(/<svg[\s\S]*<\/svg>/i);
+          const cleaned = m ? m[0] : txt;
+          _svgCache[src] = cleaned;
+          (_svgListeners[src] || []).forEach(fn => fn(cleaned));
+        } else {
+          _svgCache[src] = '__error__';
+          (_svgListeners[src] || []).forEach(fn => fn('__error__'));
+        }
+        delete _svgListeners[src];
+      })
+      .catch(() => {
+        _svgCache[src] = '__error__';
+        (_svgListeners[src] || []).forEach(fn => fn('__error__'));
+        delete _svgListeners[src];
+      });
+  }, [src]);
+
+  const width = height * aspectRatio;
+
+  if (!svgText) {
+    // Loading — reserve space
+    return (
+      <span style={{
+        display: 'inline-block',
+        width: width,
+        height: height,
+      }} />
+    );
+  }
+
+  if (svgText === '__error__') {
+    // Fallback to <img> in case file exists but fetch failed due to CORS
+    return (
+      <img
+        src={src}
+        alt="SAMASE"
+        style={{ height, width: 'auto', display: 'block', color }}
+      />
+    );
+  }
+
+  // Inject the SVG as HTML. The SVG should use fill="currentColor".
+  // Wrap in a span with the target color so `currentColor` resolves correctly.
+  return (
+    <span
+      style={{
+        display: 'inline-flex',
+        height: height,
+        color: color || 'currentColor',
+        alignItems: 'center',
+      }}
+      dangerouslySetInnerHTML={{
+        __html: sizeSvg(svgText, width, height),
+      }}
+    />
+  );
+}
+
+// Ensure the inlined SVG has explicit width/height attributes so it scales predictably.
+function sizeSvg(svgText, width, height) {
+  return svgText.replace(
+    /<svg\b([^>]*)>/i,
+    (match, attrs) => {
+      // Strip existing width/height
+      let cleaned = attrs.replace(/\swidth="[^"]*"/gi, '').replace(/\sheight="[^"]*"/gi, '');
+      return `<svg${cleaned} width="${width}" height="${height}" style="display:block">`;
+    }
+  );
+}
+
+// ============ Backward-compat inline fallbacks ============
+// Kept available for places that explicitly use the React components.
+function SamaseMonogram({ size = 36, fill = 'currentColor' }) {
+  return (
+    <InlineSvg
+      src={getLogoPaths().monogram}
+      height={size}
+      color={fill}
+      aspectRatio={240 / 140}
+    />
+  );
+}
+
+function SamaseWordmark({ height = 16, color = 'currentColor' }) {
+  return (
+    <InlineSvg
+      src={getLogoPaths().wordmark}
+      height={height * 2}
+      color={color}
+      aspectRatio={320 / 160}
+    />
+  );
+}
+
+Object.assign(window, { SamaseMark, SamaseMonogram, SamaseWordmark, InlineSvg, InlineSvgFromText });
+</script>
+  <script type="text/babel">// SAMASE — section components
+
+const S = window.SAMASE;
+
+// ============ Shared primitives ============
+function SectionKicker({ number, label }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 40 }}>
+      <span
+        className="samase-mono"
+        style={{ color: 'var(--ink-mute)' }}
+      >
+        {number} · {label}
+      </span>
+      <span style={{ flex: 1, height: 1, background: 'var(--line)' }} />
+    </div>
+  );
+}
+
+function Eyebrow({ children }) {
+  return (
+    <div
+      className="samase-mono"
+      style={{ color: 'var(--ink-mute)', marginBottom: 16 }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function Reveal({ children, delay = 0 }) {
+  const ref = React.useRef(null);
+  const [vis, setVis] = React.useState(false);
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            setTimeout(() => setVis(true), delay);
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [delay]);
+  return (
+    <div ref={ref} className={'reveal' + (vis ? ' in' : '')}>
+      {children}
+    </div>
+  );
+}
+
+// ============ Navbar ============
+function Navbar() {
+  const [scrolled, setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', fn, { passive: true });
+    return () => window.removeEventListener('scroll', fn);
+  }, []);
+
+  const links = [
+    { href: '#section-philosophy', label: 'Filosofi' },
+    { href: '#section-facilities', label: 'Fasilitas' },
+    { href: '#section-physio', label: 'Fisioterapi' },
+    { href: '#section-founding', label: 'Founding' },
+    { href: '#section-faq', label: 'FAQ' },
+  ];
+
+  return (
+    <nav
+      style={{
+        position: 'fixed',
+        top: 0, left: 0, right: 0,
+        zIndex: 50,
+        padding: '18px 0',
+        background: scrolled ? 'color-mix(in srgb, var(--bg) 88%, transparent)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(14px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
+        borderBottom: scrolled ? '1px solid var(--line-soft)' : '1px solid transparent',
+        transition: 'all 300ms ease',
+      }}
+    >
+      <div
+        className="samase-container"
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+      >
+        <SamaseMark size={20} />
+        <div className="nav-links" style={{ display: 'flex', gap: 34, alignItems: 'center' }}>
+          {links.map(l => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="samase-mono"
+              style={{
+                color: 'var(--ink-soft)',
+                fontSize: 10.5,
+                transition: 'color 200ms',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--ink)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--ink-soft)')}
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+        <a
+          href="#section-form"
+          className="samase-mono"
+          style={{
+            padding: '10px 18px',
+            border: '1px solid var(--ink)',
+            borderRadius: 999,
+            fontSize: 10.5,
+            color: 'var(--ink)',
+            transition: 'all 200ms',
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.background = 'var(--ink)';
+            e.currentTarget.style.color = 'var(--bg)';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.background = 'transparent';
+            e.currentTarget.style.color = 'var(--ink)';
+          }}
+        >
+          Daftar
+        </a>
+      </div>
+      <style>{`
+        @media (max-width: 860px) {
+          .nav-links { display: none !important; }
+        }
+      `}</style>
+    </nav>
+  );
+}
+
+// ============ Hero ============
+function Hero() {
+  const h = S.hero;
+  return (
+    <section
+      style={{
+        paddingTop: 160,
+        paddingBottom: 120,
+        position: 'relative',
+        overflow: 'hidden',
+        minHeight: '92vh',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      {/* Subtle grid backdrop */}
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          inset: 0,
+          opacity: 0.35,
+          backgroundImage:
+            'linear-gradient(to right, var(--line-soft) 1px, transparent 1px)',
+          backgroundSize: '96px 100%',
+          maskImage: 'linear-gradient(to bottom, black 0%, black 80%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 80%, transparent 100%)',
+        }}
+      />
+      <div className="samase-container" style={{ position: 'relative', width: '100%' }}>
+        <Reveal>
+          <div className="samase-mono" style={{ color: 'var(--ink-mute)', marginBottom: 48 }}>
+            <span style={{
+              display: 'inline-block',
+              width: 6, height: 6,
+              borderRadius: '50%',
+              background: 'var(--gold)',
+              marginRight: 10,
+              verticalAlign: 'middle',
+              animation: 'pulse 2.4s ease-in-out infinite',
+            }} />
+            {h.kicker}
+          </div>
+        </Reveal>
+
+        <Reveal delay={80}>
+          <h1
+            className="samase-display hero-title"
+            style={{
+              fontSize: 'clamp(48px, 8.2vw, 128px)',
+              margin: 0,
+              color: 'var(--ink)',
+              maxWidth: 1100,
+            }}
+          >
+            {h.titleTop}
+            <br />
+            <span className="samase-serif-italic">{h.titleMid}</span>
+            <br />
+            {h.titleBot}
+          </h1>
+        </Reveal>
+
+        <Reveal delay={180}>
+          <div style={{
+            marginTop: 56,
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 48,
+            maxWidth: 900,
+          }} className="hero-grid">
+            <p style={{
+              margin: 0,
+              color: 'var(--ink-soft)',
+              fontSize: 16,
+              lineHeight: 1.7,
+              maxWidth: 460,
+            }}>
+              {h.lede}
+            </p>
+            <div style={{ display: 'flex', gap: 40 }}>
+              <MetaBlock label={h.meta1Label} value={h.meta1Value} />
+              <MetaBlock label={h.meta2Label} value={h.meta2Value} />
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={260}>
+          <div style={{
+            marginTop: 80,
+            paddingTop: 28,
+            borderTop: '1px solid var(--line)',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            gap: 24,
+            flexWrap: 'wrap',
+          }}>
+            <span className="samase-serif-italic" style={{
+              fontSize: 18,
+              color: 'var(--ink-soft)',
+            }}>
+              {h.footer}
+            </span>
+            <a href="#section-philosophy" className="samase-mono" style={{
+              color: 'var(--ink-mute)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 10,
+            }}>
+              Scroll ↓
+            </a>
+          </div>
+        </Reveal>
+      </div>
+
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(0.85); }
+        }
+        @media (max-width: 720px) {
+          .hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+function MetaBlock({ label, value }) {
+  return (
+    <div>
+      <div className="samase-display" style={{
+        fontSize: 32,
+        color: 'var(--ink)',
+        marginBottom: 4,
+      }}>
+        {label}
+      </div>
+      <div className="samase-mono" style={{ color: 'var(--ink-mute)' }}>
+        {value}
+      </div>
+    </div>
+  );
+}
+
+// ============ Philosophy ============
+function Philosophy() {
+  const p = S.philosophy;
+  return (
+    <section
+      id="section-philosophy"
+      style={{ padding: '120px 0', background: 'var(--bg-elev)' }}
+    >
+      <div className="samase-container">
+        <SectionKicker number={p.number} label={p.kicker} />
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1.2fr',
+          gap: 80,
+          marginBottom: 80,
+        }} className="phil-grid">
+          <Reveal>
+            <h2 className="samase-display" style={{
+              fontSize: 'clamp(36px, 4.6vw, 68px)',
+              margin: 0,
+              color: 'var(--ink)',
+            }}>
+              {p.title}
+            </h2>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div>
+              <p className="samase-serif-italic" style={{
+                fontSize: 22,
+                color: 'var(--ink)',
+                lineHeight: 1.45,
+                margin: '0 0 28px 0',
+                paddingLeft: 20,
+                borderLeft: '1px solid var(--gold)',
+              }}>
+                {p.quote}
+              </p>
+              {p.body.map((t, i) => (
+                <p key={i} style={{
+                  color: 'var(--ink-soft)',
+                  fontSize: 16,
+                  lineHeight: 1.75,
+                  marginBottom: 16,
+                }}>
+                  {t}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 0,
+          borderTop: '1px solid var(--line)',
+        }} className="phil-pillars">
+          {p.pillars.map((pill, i) => (
+            <Reveal key={pill.n} delay={i * 100}>
+              <div style={{
+                padding: '40px 32px 40px 0',
+                borderRight: i < 2 ? '1px solid var(--line)' : 'none',
+                paddingLeft: i > 0 ? 32 : 0,
+              }} className="phil-pillar">
+                <div className="samase-mono" style={{ color: 'var(--gold)', marginBottom: 20 }}>
+                  {pill.n}
+                </div>
+                <div className="samase-display" style={{
+                  fontSize: 26,
+                  color: 'var(--ink)',
+                  marginBottom: 12,
+                }}>
+                  {pill.title}
+                </div>
+                <p style={{ margin: 0, color: 'var(--ink-soft)', fontSize: 15, lineHeight: 1.65 }}>
+                  {pill.body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .phil-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .phil-pillars { grid-template-columns: 1fr !important; }
+          .phil-pillar { border-right: none !important; padding-left: 0 !important; border-bottom: 1px solid var(--line); }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+// ============ Audience — Primary 3 cards + Secondary row (combine v1 + v2) ============
+function Audience() {
+  const a = window.SAMASE.audience;
+  const primary = a.personas.slice(0, 3);   // Lansia, Akhwat, Bapak (priority: high)
+  const secondary = a.personas.slice(3);    // Young Adult, Kids (entry/medium)
+
+  return (
+    <section
+      id="section-audience"
+      style={{ padding: '120px 0' }}
+    >
+      <div className="samase-container">
+        <SectionKicker number={a.number} label={a.kicker} />
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 80,
+          marginBottom: 72,
+          alignItems: 'end',
+        }} className="aud-grid">
+          <Reveal>
+            <h2 className="samase-display" style={{
+              fontSize: 'clamp(36px, 4.6vw, 68px)',
+              margin: 0,
+              color: 'var(--ink)',
+            }}>
+              {a.title}
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="samase-serif-italic" style={{
+              fontSize: 20,
+              color: 'var(--ink-soft)',
+              margin: 0,
+              lineHeight: 1.5,
+              maxWidth: 480,
+            }}>
+              {a.lede}
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Primary personas — 3-card grid (v1 style) */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 24,
+          marginBottom: 32,
+        }} className="aud-cards">
+          {primary.map((p, i) => (
+            <Reveal key={p.n} delay={i * 90}>
+              <PersonaCard {...p} />
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Secondary row — Young Adult + Kids as slim cards */}
+        <Reveal delay={220}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: `repeat(${secondary.length}, 1fr)`,
+            gap: 24,
+            paddingTop: 32,
+            borderTop: '1px solid var(--line)',
+          }} className="aud-secondary">
+            <div className="samase-mono" style={{
+              gridColumn: `1 / -1`,
+              color: 'var(--ink-mute)',
+              fontSize: 10,
+              marginBottom: -16,
+            }}>
+              Juga untuk
+            </div>
+            {secondary.map((p, i) => (
+              <PersonaMini key={p.n} {...p} />
+            ))}
+          </div>
+        </Reveal>
+      </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .aud-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .aud-cards { grid-template-columns: 1fr !important; }
+          .aud-secondary { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+function PersonaCard({ n, title, age, priority, hook, body, fit }) {
+  const [hover, setHover] = React.useState(false);
+  const isHighPriority = priority && priority.includes('High');
+  return (
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        background: 'var(--bg-card)',
+        border: '1px solid var(--line)',
+        padding: '36px 28px 28px',
+        minHeight: 340,
+        display: 'flex',
+        flexDirection: 'column',
+        transform: hover ? 'translateY(-3px)' : 'none',
+        transition: 'all 280ms cubic-bezier(.2,.6,.2,1)',
+        boxShadow: hover ? '0 18px 40px -20px rgba(30,22,10,0.18)' : 'none',
+      }}
+    >
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28 }}>
+        <span className="samase-mono" style={{ color: 'var(--gold)' }}>{n}</span>
+        {isHighPriority && (
+          <span className="samase-mono" style={{
+            padding: '3px 8px',
+            background: 'var(--gold)',
+            color: 'var(--ink)',
+            borderRadius: 999,
+            fontSize: 8,
+            letterSpacing: '0.12em',
+          }}>
+            PRIORITY
+          </span>
+        )}
+      </div>
+      <div className="samase-display" style={{
+        fontSize: 26,
+        color: 'var(--ink)',
+        marginBottom: 6,
+        lineHeight: 1.15,
+      }}>
+        {title}
+      </div>
+      <div className="samase-mono" style={{ color: 'var(--ink-mute)', marginBottom: 16, fontSize: 10 }}>
+        {age}
+      </div>
+      {hook && (
+        <p className="samase-serif-italic" style={{
+          margin: '0 0 14px 0',
+          color: 'var(--accent)',
+          fontSize: 15,
+          lineHeight: 1.45,
+        }}>
+          "{hook}"
+        </p>
+      )}
+      <p style={{
+        margin: 0,
+        color: 'var(--ink-soft)',
+        fontSize: 14,
+        lineHeight: 1.65,
+      }}>
+        {body}
+      </p>
+      {fit && (
+        <div style={{
+          marginTop: 20,
+          paddingTop: 16,
+          borderTop: '1px solid var(--line-soft)',
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: 6,
+        }}>
+          {fit.map((item, i) => (
+            <span key={i} className="samase-mono" style={{
+              fontSize: 8,
+              padding: '3px 8px',
+              background: 'var(--bg-elev)',
+              color: 'var(--ink-mute)',
+              borderRadius: 999,
+            }}>
+              {item}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function PersonaMini({ n, title, age, hook, body }) {
+  return (
+    <div style={{
+      padding: '24px 24px 20px',
+      background: 'var(--bg-elev)',
+      border: '1px solid var(--line-soft)',
+    }}>
+      <div style={{ display: 'flex', gap: 14, alignItems: 'baseline', marginBottom: 8 }}>
+        <span className="samase-mono" style={{ color: 'var(--ink-mute)', fontSize: 9 }}>{n}</span>
+        <span className="samase-display" style={{ fontSize: 18, color: 'var(--ink)' }}>{title}</span>
+      </div>
+      <div className="samase-mono" style={{ color: 'var(--ink-mute)', fontSize: 9, marginBottom: 10 }}>{age}</div>
+      <p style={{ margin: 0, color: 'var(--ink-soft)', fontSize: 13, lineHeight: 1.6 }}>{body}</p>
+    </div>
+  );
+}
+
+Object.assign(window, { Navbar, Hero, Philosophy, Audience, SectionKicker, Eyebrow, Reveal, MetaBlock, PersonaCard, PersonaMini });
+</script>
+  <script type="text/babel">// SAMASE — more sections: Facilities, Physio, Founding (Batch system) — v3
+
+const S2 = window.SAMASE;
+
+// ============ Facilities ============
+function Facilities() {
+  const f = window.SAMASE.facilities;
+  return (
+    <section
+      id="section-facilities"
+      style={{ padding: '120px 0', background: 'var(--bg-elev)' }}
+    >
+      <div className="samase-container">
+        <SectionKicker number={f.number} label={f.kicker} />
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 80,
+          marginBottom: 80,
+          alignItems: 'end',
+        }} className="fac-head">
+          <Reveal>
+            <h2 className="samase-display" style={{
+              fontSize: 'clamp(36px, 4.6vw, 68px)',
+              margin: 0,
+              color: 'var(--ink)',
+            }}>
+              {f.title}
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="samase-serif-italic" style={{
+              fontSize: 20,
+              color: 'var(--ink-soft)',
+              margin: 0,
+              lineHeight: 1.5,
+              maxWidth: 440,
+            }}>
+              {f.lede}
+            </p>
+          </Reveal>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 20,
+        }} className="fac-grid">
+          {f.items.map((it, i) => (
+            <Reveal key={it.n} delay={(i % 3) * 60}>
+              <FacilityCell {...it} />
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 1100px) {
+          .fac-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 700px) {
+          .fac-head { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .fac-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+// ============ Facility cell — with auto-sliding photo gallery ============
+function FacilityCell({ n, title, body, photos }) {
+  const [hover, setHover] = React.useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        background: 'var(--bg-card)',
+        border: '1px solid var(--line)',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        transition: 'all 280ms cubic-bezier(.2,.6,.2,1)',
+        transform: hover ? 'translateY(-3px)' : 'none',
+        boxShadow: hover ? '0 18px 40px -22px rgba(30,22,10,0.18)' : 'none',
+      }}
+    >
+      {/* Photo slider */}
+      <FacilitySlider photos={photos || []} paused={hover} title={title} />
+
+      {/* Content */}
+      <div style={{ padding: '24px 26px 28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 14 }}>
+          <span className="samase-mono" style={{ color: 'var(--accent)', fontSize: 10 }}>
+            {n}
+          </span>
+        </div>
+        <div className="samase-display" style={{
+          fontSize: 22,
+          color: 'var(--ink)',
+          marginBottom: 10,
+          lineHeight: 1.15,
+        }}>
+          {title}
+        </div>
+        <p style={{ margin: 0, color: 'var(--ink-soft)', fontSize: 14, lineHeight: 1.6 }}>
+          {body}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ============ Photo slider — auto + manual ============
+function FacilitySlider({ photos, paused, title }) {
+  const slides = photos && photos.length > 0 ? photos : [
+    { label: 'Photo 1', caption: 'Placeholder' },
+    { label: 'Photo 2', caption: 'Placeholder' },
+  ];
+  const [idx, setIdx] = React.useState(0);
+
+  // Auto-slide every 4s, pause on hover
+  React.useEffect(() => {
+    if (paused) return;
+    const t = setInterval(() => {
+      setIdx(i => (i + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(t);
+  }, [paused, slides.length]);
+
+  const go = (delta) => setIdx(i => (i + delta + slides.length) % slides.length);
+  const jump = (i) => setIdx(i);
+
+  const cur = slides[idx];
+
+  return (
+    <div style={{
+      position: 'relative',
+      aspectRatio: '4 / 3',
+      overflow: 'hidden',
+      background: 'var(--bg-elev)',
+    }}>
+      {/* Sliding viewport */}
+      <div style={{
+        display: 'flex',
+        width: `${slides.length * 100}%`,
+        height: '100%',
+        transform: `translateX(-${idx * (100 / slides.length)}%)`,
+        transition: 'transform 560ms cubic-bezier(.2,.6,.2,1)',
+      }}>
+        {slides.map((s, i) => (
+          <FacilityPhotoPlaceholder
+            key={i}
+            label={s.label}
+            caption={s.caption}
+            facilityTitle={title}
+            index={i}
+            width={`${100 / slides.length}%`}
+          />
+        ))}
+      </div>
+
+      {/* Manual prev / next */}
+      <button
+        onClick={() => go(-1)}
+        aria-label="Previous"
+        style={arrowStyle('left')}
+      >‹</button>
+      <button
+        onClick={() => go(1)}
+        aria-label="Next"
+        style={arrowStyle('right')}
+      >›</button>
+
+      {/* Dots */}
+      <div style={{
+        position: 'absolute',
+        bottom: 12,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        display: 'flex',
+        gap: 6,
+        zIndex: 2,
+      }}>
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => jump(i)}
+            aria-label={`Go to photo ${i + 1}`}
+            style={{
+              width: i === idx ? 18 : 6,
+              height: 6,
+              borderRadius: 999,
+              border: 'none',
+              background: i === idx ? 'var(--bg-card)' : 'rgba(255,255,255,0.5)',
+              cursor: 'pointer',
+              transition: 'all 260ms',
+              padding: 0,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Caption */}
+      {cur && cur.caption && (
+        <div style={{
+          position: 'absolute',
+          top: 12,
+          left: 14,
+          background: 'rgba(28,26,23,0.7)',
+          color: '#F2EEE5',
+          padding: '4px 10px',
+          fontSize: 10,
+          fontFamily: 'var(--font-mono)',
+          letterSpacing: '0.08em',
+          borderRadius: 999,
+          backdropFilter: 'blur(6px)',
+          zIndex: 2,
+        }}>
+          {cur.caption}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function arrowStyle(side) {
+  return {
+    position: 'absolute',
+    top: '50%',
+    [side]: 10,
+    transform: 'translateY(-50%)',
+    width: 32,
+    height: 32,
+    borderRadius: '50%',
+    border: 'none',
+    background: 'rgba(255,255,255,0.85)',
+    color: 'var(--ink)',
+    cursor: 'pointer',
+    fontSize: 20,
+    lineHeight: 1,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
+    zIndex: 2,
+    fontFamily: 'var(--font-display)',
+    paddingBottom: 3,
+  };
+}
+
+// ============ Facility photo placeholder ============
+// Beautiful gradient + icon placeholder until real photos are added.
+// Each placeholder varies by facility + index for visual variety.
+function FacilityPhotoPlaceholder({ label, caption, facilityTitle, index, width }) {
+  // Rotate through visual treatments
+  const palette = [
+    { bg: 'linear-gradient(135deg, var(--bg-elev) 0%, var(--line) 100%)', icon: 'grid' },
+    { bg: 'linear-gradient(135deg, var(--line-soft) 0%, var(--bg-elev) 100%)', icon: 'dots' },
+    { bg: 'linear-gradient(180deg, var(--bg-elev) 0%, var(--line-soft) 100%)', icon: 'arch' },
+  ];
+  const p = palette[index % palette.length];
+
+  return (
+    <div style={{
+      width: width,
+      height: '100%',
+      flexShrink: 0,
+      position: 'relative',
+      background: p.bg,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'hidden',
+    }}>
+      {/* Subtle geometric decoration */}
+      <svg
+        viewBox="0 0 100 75"
+        preserveAspectRatio="xMidYMid slice"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          opacity: 0.18,
+        }}
+      >
+        {p.icon === 'grid' && (
+          <>
+            <line x1="20" y1="0" x2="20" y2="75" stroke="var(--accent)" strokeWidth="0.25" />
+            <line x1="50" y1="0" x2="50" y2="75" stroke="var(--accent)" strokeWidth="0.25" />
+            <line x1="80" y1="0" x2="80" y2="75" stroke="var(--accent)" strokeWidth="0.25" />
+            <line x1="0" y1="25" x2="100" y2="25" stroke="var(--accent)" strokeWidth="0.25" />
+            <line x1="0" y1="50" x2="100" y2="50" stroke="var(--accent)" strokeWidth="0.25" />
+          </>
+        )}
+        {p.icon === 'dots' && (
+          <>
+            {Array.from({ length: 8 }).map((_, r) =>
+              Array.from({ length: 10 }).map((_, c) => (
+                <circle
+                  key={`${r}-${c}`}
+                  cx={c * 10 + 5}
+                  cy={r * 10 + 4}
+                  r="0.8"
+                  fill="var(--accent)"
+                />
+              ))
+            )}
+          </>
+        )}
+        {p.icon === 'arch' && (
+          <>
+            <path d="M 0 75 Q 25 45 50 75 Q 75 45 100 75" stroke="var(--accent)" strokeWidth="0.4" fill="none" />
+            <path d="M 0 75 Q 25 55 50 75 Q 75 55 100 75" stroke="var(--accent)" strokeWidth="0.3" fill="none" />
+            <path d="M 0 75 Q 25 65 50 75 Q 75 65 100 75" stroke="var(--accent)" strokeWidth="0.2" fill="none" />
+          </>
+        )}
+      </svg>
+
+      {/* Centered badge */}
+      <div style={{
+        textAlign: 'center',
+        color: 'var(--ink-mute)',
+        fontFamily: 'var(--font-mono)',
+        position: 'relative',
+      }}>
+        <div style={{
+          fontSize: 9,
+          letterSpacing: '0.22em',
+          opacity: 0.55,
+          marginBottom: 6,
+          textTransform: 'uppercase',
+        }}>
+          Photo Placeholder
+        </div>
+        <div style={{
+          fontSize: 11,
+          letterSpacing: '0.06em',
+          opacity: 0.8,
+          fontFamily: 'var(--font-display)',
+          fontStyle: 'italic',
+        }}>
+          {label}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============ Physio × Bebascedera ============
+function Physio() {
+  const p = window.SAMASE.physio;
+  return (
+    <section
+      id="section-physio"
+      style={{ padding: '120px 0' }}
+    >
+      <div className="samase-container">
+        <SectionKicker number={p.number} label={p.kicker} />
+
+        <Reveal>
+          <h2 className="samase-display" style={{
+            fontSize: 'clamp(36px, 4.6vw, 62px)',
+            margin: 0,
+            color: 'var(--ink)',
+            maxWidth: 900,
+          }}>
+            {p.title}
+          </h2>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <p style={{
+            marginTop: 32,
+            color: 'var(--ink-soft)',
+            fontSize: 17,
+            lineHeight: 1.7,
+            maxWidth: 720,
+          }}>
+            {p.lede}
+          </p>
+        </Reveal>
+
+        <div style={{
+          marginTop: 80,
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 40,
+        }} className="phys-steps">
+          {p.steps.map((s, i) => (
+            <Reveal key={s.n} delay={i * 110}>
+              <PhysioStep {...s} isLast={i === p.steps.length - 1} />
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={220}>
+          <PartnerBlock partner={p.partner} />
+        </Reveal>
+      </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .phys-steps { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+function PhysioStep({ n, title, meta, body, isLast }) {
+  return (
+    <div style={{ position: 'relative' }}>
+      <div className="samase-display" style={{
+        fontSize: 56,
+        color: 'var(--gold)',
+        lineHeight: 1,
+        marginBottom: 20,
+        opacity: 0.85,
+      }}>
+        {n}
+      </div>
+      <div className="samase-display" style={{
+        fontSize: 26,
+        color: 'var(--ink)',
+        marginBottom: 8,
+      }}>
+        {title}
+      </div>
+      <div className="samase-mono" style={{ color: 'var(--ink-mute)', marginBottom: 18 }}>
+        {meta}
+      </div>
+      <p style={{ margin: 0, color: 'var(--ink-soft)', fontSize: 15, lineHeight: 1.65 }}>
+        {body}
+      </p>
+    </div>
+  );
+}
+
+function PartnerBlock({ partner }) {
+  return (
+    <div style={{
+      marginTop: 96,
+      padding: '48px',
+      background: 'var(--bg-elev)',
+      border: '1px solid var(--line)',
+      display: 'grid',
+      gridTemplateColumns: '1fr 1.4fr',
+      gap: 48,
+      alignItems: 'center',
+    }} className="partner-block">
+      <div>
+        <div className="samase-mono" style={{ color: 'var(--ink-mute)', marginBottom: 14 }}>
+          {partner.label}
+        </div>
+        <a
+          href={partner.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="samase-display"
+          style={{
+            fontSize: 'clamp(32px, 4vw, 52px)',
+            color: 'var(--ink)',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 14,
+            borderBottom: '1px solid var(--line)',
+            paddingBottom: 6,
+          }}
+        >
+          {partner.name}
+          <span style={{ fontSize: 24, color: 'var(--gold)' }}>↗</span>
+        </a>
+      </div>
+      <div>
+        <p style={{
+          margin: 0,
+          color: 'var(--ink-soft)',
+          fontSize: 16,
+          lineHeight: 1.7,
+        }}>
+          {partner.body}
+        </p>
+        <a
+          href={partner.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="samase-mono"
+          style={{ color: 'var(--ink-mute)', display: 'inline-block', marginTop: 14 }}
+        >
+          bebascedera.com →
+        </a>
+      </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .partner-block { grid-template-columns: 1fr !important; gap: 28px !important; padding: 32px !important; }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+// ============ Countdown hook ============
+function useCountdown(targetIso) {
+  const [now, setNow] = React.useState(Date.now());
+  React.useEffect(() => {
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, []);
+  const diff = Math.max(0, new Date(targetIso).getTime() - now);
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  return { d, h, m, s, done: diff === 0 };
+}
+
+// ============ Founding — Batch System ============
+function Founding({ scarcityOverride, batchesOverride }) {
+  const S = window.SAMASE;
+  const f = S.founding;
+  const scarcityMode = scarcityOverride || f.scarcityMode;
+  const batches = batchesOverride || f.batches;
+
+  const activeBatch = batches.find(b => b.status === 'active') || batches[0];
+  const totalApplicants = batches.reduce((sum, b) => sum + b.slotsTaken, 0);
+
+  return (
+    <section
+      id="section-founding"
+      style={{
+        padding: '120px 0',
+        background: 'var(--founding-bg)',
+        color: 'var(--founding-ink)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      {/* Subtle noise / depth via radial */}
+      <div aria-hidden style={{
+        position: 'absolute', inset: 0,
+        background: 'radial-gradient(ellipse at 80% 20%, var(--founding-bg-2) 0%, transparent 60%)',
+        opacity: 0.6,
+        pointerEvents: 'none',
+      }}/>
+      <div className="samase-container" style={{ position: 'relative' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 40 }}>
+          <span className="samase-mono" style={{ color: 'var(--founding-ink)', opacity: 0.6 }}>
+            {f.number} · {f.kicker}
+          </span>
+          <span style={{ flex: 1, height: 1, background: 'var(--founding-ink)', opacity: 0.18 }} />
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1.1fr 1fr',
+          gap: 80,
+          marginBottom: 72,
+        }} className="found-grid">
+          <div>
+            <Reveal>
+              <h2 className="samase-display" style={{
+                fontSize: 'clamp(36px, 4.6vw, 68px)',
+                margin: 0,
+                color: 'var(--founding-ink)',
+              }}>
+                {f.title}
+              </h2>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <p className="samase-serif-italic" style={{
+                marginTop: 28,
+                fontSize: 20,
+                color: 'var(--founding-ink)',
+                opacity: 0.72,
+                lineHeight: 1.55,
+                maxWidth: 520,
+              }}>
+                {f.lede}
+              </p>
+            </Reveal>
+          </div>
+
+          <div>
+            <Reveal delay={150}>
+              <ScarcitySignal mode={scarcityMode} batches={batches} totalApplicants={totalApplicants} />
+            </Reveal>
+          </div>
+        </div>
+
+        {/* Batch cards */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 20,
+          marginBottom: 48,
+        }} className="batch-grid">
+          {batches.map((b, i) => (
+            <Reveal key={b.id} delay={i * 100}>
+              <BatchCard batch={b} scarcityMode={scarcityMode} />
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={250}>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: 24,
+            paddingTop: 36,
+            borderTop: '1px solid rgba(255,255,255,0.12)',
+            flexWrap: 'wrap',
+          }}>
+            <p style={{
+              margin: 0,
+              fontSize: 13,
+              color: 'var(--founding-ink)',
+              opacity: 0.55,
+              lineHeight: 1.6,
+              maxWidth: 600,
+            }}>
+              {f.disclaimer}
+            </p>
+            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+              <a href="Pricing.html" className="samase-mono" style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+                padding: '14px 22px',
+                border: '1px solid rgba(255,255,255,0.24)',
+                color: 'var(--founding-ink)',
+                borderRadius: 999,
+                fontSize: 11,
+              }}>
+                {f.ctaLabel} →
+              </a>
+              <a href="#section-form" style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 12,
+                padding: '14px 22px',
+                background: 'var(--founding-accent)',
+                color: 'var(--founding-bg-2)',
+                borderRadius: 999,
+                fontSize: 13,
+                fontWeight: 600,
+              }}>
+                <span className="samase-mono" style={{fontSize: 11}}>{f.ctaLabelShort}</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+
+      <style>{`
+        @media (max-width: 960px) {
+          .found-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .batch-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+// ---------- Scarcity signal (top-right of founding header) ----------
+function ScarcitySignal({ mode, batches, totalApplicants }) {
+  const S = window.SAMASE;
+  const copy = S.scarcityCopy[mode] || S.scarcityCopy.hard;
+  const closing = S.brand.closingDate;
+  const cd = useCountdown(closing);
+  const active = batches.find(b => b.status === 'active') || batches[0];
+
+  return (
+    <div style={{
+      background: 'rgba(255,255,255,0.04)',
+      border: '1px solid rgba(255,255,255,0.14)',
+      padding: 28,
+      borderRadius: 0,
+    }}>
+      <div className="samase-mono" style={{ color: 'var(--founding-accent)', marginBottom: 16 }}>
+        {mode === 'hard' ? 'HARD QUOTA' : mode === 'soft' ? 'LIMITED COHORT' : 'HYBRID SCARCITY'}
+      </div>
+      <div className="samase-display" style={{
+        fontSize: 22,
+        color: 'var(--founding-ink)',
+        lineHeight: 1.3,
+        marginBottom: 8,
+      }}>
+        {copy.headline}
+      </div>
+      <p className="samase-serif-italic" style={{
+        margin: '0 0 22px 0',
+        fontSize: 15,
+        color: 'var(--founding-ink)',
+        opacity: 0.65,
+        lineHeight: 1.5,
+      }}>
+        {copy.sub}
+      </p>
+
+      {/* Mode-specific detail */}
+      {mode === 'hard' && (
+        <div style={{ display: 'grid', gap: 12 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 16 }}>
+            <span className="samase-mono" style={{ color: 'var(--founding-ink)', opacity: 0.55, fontSize: 10 }}>
+              Gelombang aktif · {active.label}
+            </span>
+            <span className="samase-display" style={{ fontSize: 22, color: 'var(--founding-ink)' }}>
+              {active.slotsTaken}<span style={{ opacity: 0.45 }}>/{active.slotsTotal}</span>
+            </span>
+          </div>
+          <div style={{ height: 2, background: 'rgba(255,255,255,0.14)', overflow: 'hidden' }}>
+            <div style={{
+              height: '100%',
+              width: `${Math.round((active.slotsTaken / active.slotsTotal) * 100)}%`,
+              background: 'var(--founding-accent)',
+              transition: 'width 1s cubic-bezier(.2,.6,.2,1)',
+            }} />
+          </div>
+        </div>
+      )}
+
+      {mode === 'soft' && (
+        <CountdownBlock cd={cd} />
+      )}
+
+      {mode === 'hybrid' && (
+        <div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 16, marginBottom: 16 }}>
+            <span className="samase-mono" style={{ color: 'var(--founding-ink)', opacity: 0.55, fontSize: 10 }}>
+              Early applicants
+            </span>
+            <span className="samase-display" style={{ fontSize: 24, color: 'var(--founding-ink)' }}>
+              {totalApplicants}+
+            </span>
+          </div>
+          <CountdownBlock cd={cd} small />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function CountdownBlock({ cd, small }) {
+  const items = [
+    { v: cd.d, l: 'Hari' },
+    { v: cd.h, l: 'Jam' },
+    { v: cd.m, l: 'Menit' },
+    { v: cd.s, l: 'Detik' },
+  ];
+  return (
+    <div>
+      <div className="samase-mono" style={{ color: 'var(--founding-ink)', opacity: 0.55, marginBottom: 10, fontSize: 10 }}>
+        Registrasi ditutup dalam
+      </div>
+      <div style={{ display: 'flex', gap: 14 }}>
+        {items.map(({v,l}, i) => (
+          <div key={i} style={{ flex: 1 }}>
+            <div className="samase-display" style={{
+              fontSize: small ? 24 : 30,
+              color: 'var(--founding-ink)',
+              lineHeight: 1,
+              fontVariantNumeric: 'tabular-nums',
+            }}>
+              {String(v).padStart(2, '0')}
+            </div>
+            <div className="samase-mono" style={{ color: 'var(--founding-ink)', opacity: 0.45, marginTop: 6, fontSize: 9 }}>
+              {l}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ---------- Batch Card ----------
+function BatchCard({ batch, scarcityMode }) {
+  const isActive = batch.status === 'active';
+  const isClosed = batch.status === 'closed';
+  const pct = Math.round((batch.slotsTaken / batch.slotsTotal) * 100);
+
+  return (
+    <div style={{
+      padding: 32,
+      background: isActive ? 'var(--bg-card)' : 'rgba(255,255,255,0.04)',
+      color: isActive ? 'var(--ink)' : 'var(--founding-ink)',
+      border: `1px solid ${isActive ? 'var(--founding-accent)' : 'rgba(255,255,255,0.14)'}`,
+      borderRadius: 0,
+      opacity: isClosed ? 0.5 : 1,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 20,
+      position: 'relative',
+      minHeight: 440,
+    }}>
+      {isActive && (
+        <div style={{
+          position: 'absolute',
+          top: -10, right: 16,
+          background: 'var(--founding-accent)',
+          color: 'var(--founding-bg-2)',
+          padding: '4px 10px',
+          fontSize: 9,
+          letterSpacing: '0.14em',
+          textTransform: 'uppercase',
+          fontFamily: 'var(--font-mono)',
+          fontWeight: 600,
+        }}>
+          {batch.badge}
+        </div>
+      )}
+
+      <div>
+        <div className="samase-mono" style={{
+          color: isActive ? 'var(--ink-mute)' : 'rgba(255,255,255,0.5)',
+          marginBottom: 10,
+          fontSize: 10,
+        }}>
+          {batch.gelombang}
+        </div>
+        <div className="samase-display" style={{
+          fontSize: 42,
+          lineHeight: 1,
+          marginBottom: 8,
+        }}>
+          {batch.label}
+        </div>
+        <p className="samase-serif-italic" style={{
+          margin: 0,
+          fontSize: 14,
+          opacity: 0.7,
+          lineHeight: 1.45,
+        }}>
+          {batch.tagline}
+        </p>
+      </div>
+
+      {/* Sample price */}
+      <div style={{
+        paddingTop: 18,
+        paddingBottom: 6,
+        borderTop: `1px solid ${isActive ? 'var(--line)' : 'rgba(255,255,255,0.1)'}`,
+        borderBottom: `1px solid ${isActive ? 'var(--line)' : 'rgba(255,255,255,0.1)'}`,
+      }}>
+        <div className="samase-mono" style={{
+          fontSize: 9,
+          opacity: 0.55,
+          marginBottom: 6,
+        }}>
+          Open Gym 3 Bulan — dari
+        </div>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
+          <span className="samase-display" style={{ fontSize: 28 }}>
+            Rp {(batch.priceOpenGym3M/1000).toLocaleString('id-ID')}K
+          </span>
+          <span style={{
+            fontSize: 13,
+            textDecoration: 'line-through',
+            opacity: 0.4,
+          }}>
+            Rp {(batch.priceOpenGym3MNormal/1000).toLocaleString('id-ID')}K
+          </span>
+        </div>
+        <div className="samase-mono" style={{ fontSize: 9, color: isActive ? 'var(--accent)' : 'var(--founding-accent)', marginTop: 6 }}>
+          Hemat Rp {((batch.priceOpenGym3MNormal - batch.priceOpenGym3M)/1000).toFixed(0)}K
+        </div>
+      </div>
+
+      {/* Progress (only in hard mode and if active) */}
+      {scarcityMode === 'hard' && !isClosed && (
+        <div>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            fontSize: 10,
+            marginBottom: 6,
+          }} className="samase-mono">
+            <span style={{ opacity: 0.55 }}>Slot terisi</span>
+            <span>{batch.slotsTaken}/{batch.slotsTotal}</span>
+          </div>
+          <div style={{
+            height: 2,
+            background: isActive ? 'var(--line)' : 'rgba(255,255,255,0.12)',
+            overflow: 'hidden',
+          }}>
+            <div style={{
+              height: '100%',
+              width: `${pct}%`,
+              background: isActive ? 'var(--gold)' : 'var(--founding-accent)',
+            }} />
+          </div>
+        </div>
+      )}
+
+      {scarcityMode !== 'hard' && isActive && (
+        <div className="samase-mono" style={{
+          fontSize: 10,
+          color: 'var(--gold)',
+        }}>
+          {scarcityMode === 'soft' ? 'Limited · Application only' : `${batch.slotsTaken}+ early applicants`}
+        </div>
+      )}
+      {scarcityMode !== 'hard' && !isActive && (
+        <div className="samase-mono" style={{
+          fontSize: 10,
+          color: 'var(--founding-accent)',
+          opacity: 0.65,
+        }}>
+          Segera dibuka
+        </div>
+      )}
+
+      {/* Perks */}
+      <ul style={{
+        listStyle: 'none',
+        padding: 0,
+        margin: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 8,
+        flex: 1,
+      }}>
+        {batch.perks.slice(0, 6).map((p, i) => (
+          <li key={i} style={{
+            display: 'flex',
+            gap: 10,
+            fontSize: 13,
+            lineHeight: 1.55,
+            opacity: 0.88,
+          }}>
+            <span style={{ color: isActive ? 'var(--gold)' : 'var(--founding-accent)', flexShrink: 0 }}>✓</span>
+            <span>{p}</span>
+          </li>
+        ))}
+        {batch.perks.length > 6 && (
+          <li className="samase-mono" style={{
+            fontSize: 9,
+            opacity: 0.55,
+            marginTop: 4,
+          }}>
+            +{batch.perks.length - 6} benefit lainnya
+          </li>
+        )}
+      </ul>
+
+      {/* CTA */}
+      <a
+        href={isClosed ? '#' : '#section-form'}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 10,
+          padding: '14px 20px',
+          background: isActive ? 'var(--ink)' : 'transparent',
+          color: isActive ? 'var(--bg)' : 'var(--founding-ink)',
+          border: isActive ? 'none' : '1px solid rgba(255,255,255,0.24)',
+          borderRadius: 999,
+          fontSize: 13,
+          pointerEvents: isClosed ? 'none' : 'auto',
+        }}
+      >
+        <span className="samase-mono" style={{fontSize: 10}}>
+          {isActive ? 'Amankan Slot Saya' : isClosed ? 'Gelombang Tutup' : 'Daftar Waiting List'}
+        </span>
+        {!isClosed && <span>→</span>}
+      </a>
+    </div>
+  );
+}
+
+Object.assign(window, { Facilities, Physio, Founding, FacilityCell, FacilitySlider, FacilityPhotoPlaceholder, PhysioStep, PartnerBlock, BatchCard, ScarcitySignal, useCountdown, CountdownBlock });
+</script>
+  <script type="text/babel">// SAMASE — remaining sections (Coach, FAQ, Form, Footer)
+
+const S3 = window.SAMASE;
+
+// ============ Coach — general intro + team grid ============
+function Coach() {
+  const c = S3.coach;
+  const team = c.team || [];
+  return (
+    <section
+      id="section-coach"
+      style={{ padding: '120px 0' }}
+    >
+      <div className="samase-container">
+        <SectionKicker number={c.number} label={c.kicker} />
+
+        {/* Header — general intro */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1.1fr 1fr',
+          gap: 80,
+          marginBottom: 72,
+          alignItems: 'end',
+        }} className="coach-head">
+          <Reveal>
+            <h2 className="samase-display" style={{
+              fontSize: 'clamp(36px, 4.6vw, 64px)',
+              margin: 0,
+              color: 'var(--ink)',
+              lineHeight: 1.08,
+            }}>
+              {c.title}
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <p style={{
+              margin: 0,
+              color: 'var(--ink-soft)',
+              fontSize: 17,
+              lineHeight: 1.7,
+              maxWidth: 540,
+            }}>
+              {c.body}
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Team grid — 4 cards */}
+        <div
+          className="coach-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 20,
+          }}
+        >
+          {team.map((member, i) => (
+            <Reveal key={member.name} delay={i * 80}>
+              <CoachCard {...member} />
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Consult CTA */}
+        <Reveal delay={300}>
+          <div style={{
+            marginTop: 72,
+            paddingTop: 36,
+            borderTop: '1px solid var(--line)',
+            display: 'grid',
+            gridTemplateColumns: '1fr auto',
+            gap: 40,
+            alignItems: 'center',
+          }} className="coach-cta">
+            <p className="samase-serif-italic" style={{
+              margin: 0,
+              color: 'var(--ink-soft)',
+              fontSize: 18,
+              lineHeight: 1.5,
+              maxWidth: 560,
+            }}>
+              {c.consultLabel}
+            </p>
+            <a href="#section-form" style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 12,
+              padding: '14px 24px',
+              background: 'var(--ink)',
+              color: 'var(--bg)',
+              borderRadius: 999,
+              fontSize: 13,
+              fontWeight: 500,
+              transition: 'all 200ms',
+              whiteSpace: 'nowrap',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'var(--accent)'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'var(--ink)'; }}
+            >
+              <span className="samase-mono" style={{ fontSize: 11 }}>{c.ctaLabel}</span>
+              <span>→</span>
+            </a>
+          </div>
+        </Reveal>
+      </div>
+
+      <style>{`
+        @media (max-width: 1100px) {
+          .coach-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 860px) {
+          .coach-head { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .coach-grid { grid-template-columns: 1fr !important; }
+          .coach-cta { grid-template-columns: 1fr !important; gap: 24px !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+// ============ Coach Card ============
+function CoachCard({ name, role, specialty, bio, photo, tags }) {
+  const [hover, setHover] = React.useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        background: 'var(--bg-card)',
+        border: '1px solid var(--line)',
+        padding: 0,
+        overflow: 'hidden',
+        transition: 'all 280ms cubic-bezier(.2,.6,.2,1)',
+        transform: hover ? 'translateY(-3px)' : 'none',
+        boxShadow: hover ? '0 20px 44px -22px rgba(30,22,10,0.22)' : 'none',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      {/* Photo area — placeholder until real photo set */}
+      <CoachPortrait photo={photo} name={name} />
+
+      {/* Content */}
+      <div style={{ padding: '24px 22px 22px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+        <div className="samase-display" style={{
+          fontSize: 22,
+          color: 'var(--ink)',
+          lineHeight: 1.15,
+          marginBottom: 4,
+        }}>
+          {name}
+        </div>
+        <div className="samase-mono" style={{
+          color: 'var(--accent)',
+          fontSize: 10,
+          marginBottom: 14,
+        }}>
+          {role}
+        </div>
+        <div className="samase-serif-italic" style={{
+          color: 'var(--ink-soft)',
+          fontSize: 14,
+          marginBottom: 14,
+          lineHeight: 1.45,
+        }}>
+          {specialty}
+        </div>
+        <p style={{
+          margin: 0,
+          color: 'var(--ink-soft)',
+          fontSize: 13,
+          lineHeight: 1.6,
+          flex: 1,
+        }}>
+          {bio}
+        </p>
+        {tags && tags.length > 0 && (
+          <div style={{
+            marginTop: 16,
+            paddingTop: 14,
+            borderTop: '1px solid var(--line-soft)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 6,
+          }}>
+            {tags.map((t, i) => (
+              <span key={i} className="samase-mono" style={{
+                fontSize: 8,
+                padding: '3px 8px',
+                background: 'var(--bg-elev)',
+                color: 'var(--ink-mute)',
+                borderRadius: 999,
+              }}>
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ============ Coach Portrait — placeholder or real image ============
+function CoachPortrait({ photo, name }) {
+  // If photo URL is set, show image
+  if (photo) {
+    return (
+      <div style={{
+        aspectRatio: '4 / 5',
+        backgroundImage: `url(${photo})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        background: 'var(--bg-elev)',
+      }} />
+    );
+  }
+  // Else — stylized silhouette placeholder
+  return (
+    <div style={{
+      aspectRatio: '4 / 5',
+      background: 'linear-gradient(180deg, var(--bg-elev) 0%, var(--line) 100%)',
+      position: 'relative',
+      overflow: 'hidden',
+    }}>
+      <svg
+        viewBox="0 0 100 125"
+        preserveAspectRatio="xMidYMax meet"
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '72%',
+          height: '90%',
+          opacity: 0.28,
+        }}
+      >
+        <defs>
+          <linearGradient id={`silh-${name?.replace(/\s/g, '') || 'g'}`} x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.15" />
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="28" r="13" fill={`url(#silh-${name?.replace(/\s/g, '') || 'g'})`} />
+        <path
+          d="M 25 125 Q 25 62 50 54 Q 75 62 75 125 Z"
+          fill={`url(#silh-${name?.replace(/\s/g, '') || 'g'})`}
+        />
+      </svg>
+      <span className="samase-mono" style={{
+        position: 'absolute',
+        top: 14,
+        left: 16,
+        color: 'var(--ink-mute)',
+        fontSize: 9,
+        opacity: 0.7,
+      }}>
+        Portrait
+      </span>
+      <span className="samase-mono" style={{
+        position: 'absolute',
+        bottom: 14,
+        right: 16,
+        color: 'var(--ink-mute)',
+        fontSize: 9,
+        opacity: 0.5,
+      }}>
+        Photo TBA
+      </span>
+    </div>
+  );
+}
+
+// ============ FAQ ============
+function FAQ() {
+  const f = S3.faq;
+  const [open, setOpen] = React.useState(0);
+  return (
+    <section
+      id="section-faq"
+      style={{ padding: '120px 0', background: 'var(--bg-elev)' }}
+    >
+      <div className="samase-container">
+        <SectionKicker number={f.number} label={f.kicker} />
+
+        <Reveal>
+          <h2 className="samase-display" style={{
+            fontSize: 'clamp(36px, 4.6vw, 64px)',
+            margin: '0 0 64px 0',
+            color: 'var(--ink)',
+            maxWidth: 900,
+          }}>
+            {f.title}
+          </h2>
+        </Reveal>
+
+        <div style={{
+          borderTop: '1px solid var(--line)',
+        }}>
+          {f.items.map((item, i) => (
+            <FAQItem
+              key={i}
+              n={String(i + 1).padStart(2, '0')}
+              q={item.q}
+              a={item.a}
+              open={open === i}
+              onToggle={() => setOpen(open === i ? -1 : i)}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQItem({ n, q, a, open, onToggle }) {
+  return (
+    <div style={{ borderBottom: '1px solid var(--line)' }}>
+      <button
+        onClick={onToggle}
+        style={{
+          width: '100%',
+          background: 'none',
+          border: 'none',
+          padding: '28px 0',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 20,
+          textAlign: 'left',
+          color: 'var(--ink)',
+        }}
+      >
+        <div style={{ display: 'flex', gap: 28, alignItems: 'baseline', flex: 1 }}>
+          <span className="samase-mono" style={{ color: 'var(--ink-mute)', flexShrink: 0 }}>
+            {n}
+          </span>
+          <span className="samase-display" style={{ fontSize: 'clamp(18px, 2.2vw, 24px)' }}>
+            {q}
+          </span>
+        </div>
+        <span style={{
+          fontSize: 22,
+          color: 'var(--ink-mute)',
+          transform: open ? 'rotate(45deg)' : 'rotate(0)',
+          transition: 'transform 260ms cubic-bezier(.2,.6,.2,1)',
+          flexShrink: 0,
+        }}>
+          +
+        </span>
+      </button>
+      <div style={{
+        maxHeight: open ? 400 : 0,
+        overflow: 'hidden',
+        transition: 'max-height 400ms cubic-bezier(.2,.6,.2,1)',
+      }}>
+        <p style={{
+          margin: 0,
+          padding: '0 0 32px 62px',
+          color: 'var(--ink-soft)',
+          fontSize: 16,
+          lineHeight: 1.75,
+          maxWidth: 780,
+        }} className="faq-answer">
+          {a}
+        </p>
+      </div>
+      <style>{`
+        @media (max-width: 600px) {
+          .faq-answer { padding-left: 0 !important; }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+// ============ Form ============
+function FormSection() {
+  const S = window.SAMASE;
+  const f = S.form;
+  const activeBatch = S.founding.batches.find(b => b.status === 'active') || S.founding.batches[0];
+  const [submitted, setSubmitted] = React.useState(false);
+  const [form, setForm] = React.useState({
+    name: '', whatsapp: '', age: '', persona: '', goal: '', batch: activeBatch.id,
+  });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  const update = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+
+  // Top 4 perks for the selected batch (for display next to form)
+  const selectedBatch = S.founding.batches.find(b => b.id === form.batch) || activeBatch;
+  const displayPerks = selectedBatch.perks.slice(0, 5);
+
+  return (
+    <section
+      id="section-form"
+      style={{ padding: '120px 0', background: 'var(--bg-elev)' }}
+    >
+      <div className="samase-container">
+        <SectionKicker number={f.number} label={f.kicker} />
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 60,
+          alignItems: 'start',
+        }} className="form-grid">
+          {/* LEFT — headline + lead magnets */}
+          <div>
+            <Reveal>
+              <h2 className="samase-display" style={{
+                fontSize: 'clamp(40px, 5.2vw, 72px)',
+                margin: 0,
+                color: 'var(--ink)',
+                lineHeight: 1.02,
+              }}>
+                {f.title}
+              </h2>
+            </Reveal>
+
+            <Reveal delay={100}>
+              <p style={{
+                marginTop: 24,
+                color: 'var(--ink-soft)',
+                fontSize: 17,
+                lineHeight: 1.7,
+                maxWidth: 520,
+              }}>
+                {f.lede}
+              </p>
+            </Reveal>
+
+            <Reveal delay={180}>
+              <div style={{
+                marginTop: 44,
+                padding: '28px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--line)',
+              }}>
+                <div className="samase-mono" style={{ color: 'var(--ink-mute)', marginBottom: 6 }}>
+                  {f.benefitsHead}
+                </div>
+                <div className="samase-display" style={{
+                  fontSize: 22,
+                  color: 'var(--ink)',
+                  marginBottom: 22,
+                  lineHeight: 1.25,
+                }}>
+                  Gratis saat Anda isi form hari ini
+                </div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {displayPerks.map((p, i) => (
+                    <li key={i} style={{
+                      display: 'flex',
+                      gap: 12,
+                      fontSize: 14,
+                      color: 'var(--ink-soft)',
+                      lineHeight: 1.55,
+                    }}>
+                      <span style={{ color: 'var(--gold)', flexShrink: 0, fontWeight: 500 }}>✓</span>
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="samase-mono" style={{
+                  marginTop: 20,
+                  paddingTop: 18,
+                  borderTop: '1px solid var(--line-soft)',
+                  color: 'var(--ink-mute)',
+                  fontSize: 10,
+                  lineHeight: 1.6,
+                }}>
+                  Benefit di atas berlaku untuk gelombang <span style={{ color: 'var(--gold)' }}>{selectedBatch.label}</span>. Gelombang berikutnya mendapat benefit yang lebih sedikit — isi form sekarang untuk mengunci benefit ini.
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* RIGHT — form */}
+          <Reveal delay={140}>
+            <div style={{
+              padding: '36px 32px',
+              background: 'var(--bg-card)',
+              border: '1px solid var(--line)',
+            }} className="form-card">
+              {submitted ? (
+                <div style={{ textAlign: 'center', padding: '40px 0' }}>
+                  <div style={{
+                    width: 56, height: 56,
+                    margin: '0 auto 20px',
+                    borderRadius: '50%',
+                    background: 'var(--gold)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'var(--ink)',
+                    fontSize: 24,
+                  }}>✓</div>
+                  <div className="samase-display" style={{
+                    fontSize: 30,
+                    color: 'var(--ink)',
+                    marginBottom: 12,
+                  }}>
+                    Terima kasih.
+                  </div>
+                  <p className="samase-serif-italic" style={{
+                    margin: '0 auto', maxWidth: 380, fontSize: 16, color: 'var(--ink-soft)', lineHeight: 1.5,
+                  }}>
+                    Tim kami akan menghubungi Anda dalam 1×24 jam untuk menjadwalkan Postural Screening & trial class.
+                  </p>
+                  <button
+                    onClick={() => { setSubmitted(false); setForm({name:'',whatsapp:'',age:'',persona:'',goal:'',batch:activeBatch.id}); }}
+                    className="samase-mono"
+                    style={{
+                      marginTop: 28,
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--ink-mute)',
+                      textDecoration: 'underline',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Kirim lagi
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={onSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+                  <Field label="Nama lengkap" value={form.name} onChange={update('name')} required />
+                  <Field label="WhatsApp" value={form.whatsapp} onChange={update('whatsapp')} type="tel" placeholder="+62 812 ..." required />
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 18 }}>
+                    <Field label="Usia" value={form.age} onChange={update('age')} placeholder="mis. 34" />
+                    <SelectField
+                      label="Saya adalah"
+                      value={form.persona}
+                      onChange={update('persona')}
+                      options={[
+                        { v: '', l: 'Pilih…' },
+                        { v: 'lansia', l: 'Lansia aktif (55+)' },
+                        { v: 'akhwat', l: 'Akhwat / Muslimah' },
+                        { v: 'bapak', l: 'Bapak / Laki-laki dewasa' },
+                        { v: 'young', l: 'Young adult (20–30)' },
+                        { v: 'kids', l: 'Orang tua, untuk anak 8–19' },
+                      ]}
+                    />
+                  </div>
+                  <Field label="Tujuan utama Anda" value={form.goal} onChange={update('goal')} placeholder="mis. pulih dari nyeri punggung, active di usia 60+, safe space untuk olahraga" textarea />
+
+                  <div>
+                    <div className="samase-mono" style={{ color: 'var(--ink-mute)', marginBottom: 10 }}>
+                      Gelombang yang diminati
+                    </div>
+                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                      {S.founding.batches.map(b => (
+                        <button
+                          key={b.id}
+                          type="button"
+                          onClick={() => setForm({ ...form, batch: b.id })}
+                          disabled={b.status === 'closed'}
+                          className="samase-mono"
+                          style={{
+                            flex: '1 1 100px',
+                            padding: '10px 12px',
+                            background: form.batch === b.id ? 'var(--ink)' : 'transparent',
+                            color: form.batch === b.id ? 'var(--bg)' : b.status === 'closed' ? 'var(--ink-mute)' : 'var(--ink)',
+                            border: `1px solid ${form.batch === b.id ? 'var(--ink)' : 'var(--line)'}`,
+                            fontSize: 10,
+                            cursor: b.status === 'closed' ? 'not-allowed' : 'pointer',
+                            opacity: b.status === 'closed' ? 0.4 : 1,
+                            transition: 'all 180ms',
+                          }}
+                        >
+                          {b.label}
+                          {b.status === 'active' && <span style={{ marginLeft: 6, color: form.batch === b.id ? 'var(--gold)' : 'var(--gold)' }}>●</span>}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <button type="submit" style={{
+                    marginTop: 6,
+                    padding: '16px 28px',
+                    background: 'var(--form-cta)',
+                    color: 'var(--form-cta-ink)',
+                    border: 'none',
+                    borderRadius: 999,
+                    fontSize: 14,
+                    fontWeight: 500,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 12,
+                    transition: 'background 200ms',
+                    cursor: 'pointer',
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.background = 'var(--accent)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'var(--form-cta)'}
+                  >
+                    <span className="samase-mono" style={{fontSize: 11}}>
+                      Kirim & Klaim Benefit Gratis
+                    </span>
+                    <span>→</span>
+                  </button>
+
+                  <p className="samase-mono" style={{
+                    margin: 0,
+                    color: 'var(--ink-mute)',
+                    fontSize: 10,
+                    textAlign: 'center',
+                    lineHeight: 1.5,
+                  }}>
+                    Data Anda aman. Tidak dibagikan ke pihak ketiga. Respon dalam 1×24 jam.
+                  </p>
+                </form>
+              )}
+            </div>
+          </Reveal>
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .form-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+        }
+        @media (max-width: 600px) {
+          .form-card { padding: 28px 22px !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+function SelectField({ label, value, onChange, options }) {
+  const [focus, setFocus] = React.useState(false);
+  return (
+    <div>
+      <label className="samase-mono" style={{
+        display: 'block',
+        color: focus ? 'var(--ink)' : 'var(--ink-mute)',
+        marginBottom: 4,
+        transition: 'color 180ms',
+      }}>
+        {label}
+      </label>
+      <select
+        value={value}
+        onChange={onChange}
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
+        style={{
+          width: '100%',
+          padding: '14px 0',
+          background: 'transparent',
+          border: 'none',
+          borderBottom: `1px solid ${focus ? 'var(--ink)' : 'var(--line)'}`,
+          color: 'var(--ink)',
+          fontSize: 15,
+          fontFamily: 'var(--font-body)',
+          outline: 'none',
+        }}
+      >
+        {options.map(o => <option key={o.v} value={o.v}>{o.l}</option>)}
+      </select>
+    </div>
+  );
+}
+
+function Field({ label, value, onChange, type = 'text', placeholder, textarea, required }) {
+  const [focus, setFocus] = React.useState(false);
+  const base = {
+    width: '100%',
+    padding: '14px 0',
+    background: 'transparent',
+    border: 'none',
+    borderBottom: `1px solid ${focus ? 'var(--ink)' : 'var(--line)'}`,
+    color: 'var(--ink)',
+    fontSize: 16,
+    fontFamily: 'var(--font-body)',
+    outline: 'none',
+    transition: 'border-color 180ms',
+    resize: 'vertical',
+  };
+  return (
+    <div>
+      <label className="samase-mono" style={{
+        display: 'block',
+        color: focus ? 'var(--ink)' : 'var(--ink-mute)',
+        marginBottom: 4,
+        transition: 'color 180ms',
+      }}>
+        {label}{required && <span style={{color: 'var(--gold)', marginLeft: 4}}>*</span>}
+      </label>
+      {textarea ? (
+        <textarea
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          rows={3}
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
+          style={base}
+        />
+      ) : (
+        <input
+          type={type}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          required={required}
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
+          style={base}
+        />
+      )}
+    </div>
+  );
+}
+
+// ============ Footer ============
+function Footer() {
+  return (
+    <footer style={{
+      padding: '60px 0 40px',
+      borderTop: '1px solid var(--line)',
+      background: 'var(--bg)',
+    }}>
+      <div className="samase-container">
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: 24,
+          flexWrap: 'wrap',
+        }}>
+          <SamaseMark size={20} subtitle="Pre-opening · 2026" />
+          <div style={{
+            display: 'flex',
+            gap: 32,
+            alignItems: 'center',
+            flexWrap: 'wrap',
+          }}>
+            <a
+              href="https://bebascedera.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="samase-mono"
+              style={{ color: 'var(--ink-mute)' }}
+            >
+              Bebascedera ↗
+            </a>
+            <span className="samase-mono" style={{ color: 'var(--ink-mute)' }}>
+              Instagram
+            </span>
+            <span className="samase-mono" style={{ color: 'var(--ink-mute)' }}>
+              WhatsApp
+            </span>
+          </div>
+        </div>
+
+        <div style={{
+          marginTop: 40,
+          paddingTop: 24,
+          borderTop: '1px solid var(--line-soft)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: 16,
+          flexWrap: 'wrap',
+        }}>
+          <span className="samase-mono" style={{ color: 'var(--ink-mute)', fontSize: 10 }}>
+            © SAMASE Sports Club 2026 — All rights reserved.
+          </span>
+          <span className="samase-mono" style={{ color: 'var(--ink-mute)', fontSize: 10 }}>
+            Jakarta · Juli 2026
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+Object.assign(window, { Coach, CoachCard, CoachPortrait, FAQ, FAQItem, FormSection, Field, SelectField, Footer });
+</script>
+  <script type="text/babel">// SAMASE — Layout variants (orchestration layer)
+// Each layout changes the hero composition + section rhythm.
+// Palette is applied independently via body class.
+
+// Layout: Editorial (current / default) — magazine-style, serif-forward, grid backdrop
+function LayoutEditorial() {
+  return (
+    <>
+      <Hero />
+      <Philosophy />
+      <Audience />
+      <Facilities />
+      <Physio />
+      <Founding />
+      <Coach />
+      <FAQ />
+      <FormSection />
+    </>
+  );
+}
+
+// Layout: Zen Minimal — huge negative space, single column, ultra calm
+function LayoutZen() {
+  return (
+    <>
+      <ZenHero />
+      <div className="zen-section-wrap">
+        <Philosophy />
+        <Audience />
+        <Facilities />
+        <Physio />
+      </div>
+      <Founding />
+      <div className="zen-section-wrap">
+        <Coach />
+        <FAQ />
+      </div>
+      <FormSection />
+      <style>{`
+        body.layout-zen section { padding-top: 160px !important; padding-bottom: 160px !important; }
+        body.layout-zen .samase-container { max-width: 980px !important; }
+        body.layout-zen h1, body.layout-zen h2 { font-weight: 300 !important; letter-spacing: -0.03em !important; }
+      `}</style>
+    </>
+  );
+}
+
+// Layout: Architectural Grid — heavy grid lines, brutalist editorial
+function LayoutArchitectural() {
+  return (
+    <>
+      <ArchHero />
+      <Philosophy />
+      <Audience />
+      <Facilities />
+      <Physio />
+      <Founding />
+      <Coach />
+      <FAQ />
+      <FormSection />
+      <style>{`
+        body.layout-arch section { border-bottom: 1px solid var(--line); }
+        body.layout-arch .samase-container {
+          position: relative;
+        }
+        body.layout-arch .samase-container::before,
+        body.layout-arch .samase-container::after {
+          content: '';
+          position: absolute;
+          top: 0; bottom: 0;
+          width: 1px;
+          background: var(--line-soft);
+          pointer-events: none;
+        }
+        body.layout-arch .samase-container::before { left: 0; }
+        body.layout-arch .samase-container::after { right: 0; }
+        body.layout-arch h1, body.layout-arch h2 {
+          font-family: var(--font-body) !important;
+          font-weight: 500 !important;
+          letter-spacing: -0.02em !important;
+          text-transform: none !important;
+        }
+      `}</style>
+    </>
+  );
+}
+
+// Layout: Hero-Focus — cinematic hero that takes >100vh, rest is dense
+function LayoutHeroFocus() {
+  return (
+    <>
+      <CinematicHero />
+      <Philosophy />
+      <Audience />
+      <Facilities />
+      <Physio />
+      <Founding />
+      <Coach />
+      <FAQ />
+      <FormSection />
+      <style>{`
+        body.layout-hero section:not(#section-hero) { padding-top: 80px !important; padding-bottom: 80px !important; }
+      `}</style>
+    </>
+  );
+}
+
+// ==================== Hero variants ====================
+function ZenHero() {
+  const h = window.SAMASE.hero;
+  const S = window.SAMASE;
+  return (
+    <section id="section-hero" style={{
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      padding: '120px 0',
+      textAlign: 'center',
+    }}>
+      <div className="samase-container">
+        <Reveal>
+          <div className="samase-mono" style={{ color: 'var(--ink-mute)', marginBottom: 64, letterSpacing: '0.2em' }}>
+            {h.kicker}
+          </div>
+        </Reveal>
+        <Reveal delay={120}>
+          <h1 className="samase-display" style={{
+            fontSize: 'clamp(40px, 6vw, 96px)',
+            fontWeight: 300,
+            margin: 0,
+            color: 'var(--ink)',
+            lineHeight: 1.05,
+            letterSpacing: '-0.03em',
+          }}>
+            {h.titleTop} {h.titleMid}<br />
+            <span className="samase-serif-italic">{h.titleBot}</span>
+          </h1>
+        </Reveal>
+        <Reveal delay={220}>
+          <p style={{
+            marginTop: 48,
+            color: 'var(--ink-soft)',
+            fontSize: 17,
+            lineHeight: 1.7,
+            maxWidth: 520,
+            margin: '48px auto 0',
+          }}>
+            {h.lede}
+          </p>
+        </Reveal>
+        <Reveal delay={300}>
+          <div style={{ marginTop: 72, display: 'flex', justifyContent: 'center', gap: 48, flexWrap: 'wrap' }}>
+            <MetaBlock label={h.meta1Label} value={h.meta1Value} />
+            <div style={{ width: 1, background: 'var(--line)' }} />
+            <MetaBlock label={h.meta2Label} value={h.meta2Value} />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function ArchHero() {
+  const h = window.SAMASE.hero;
+  return (
+    <section id="section-hero" style={{
+      minHeight: '100vh',
+      paddingTop: 140,
+      paddingBottom: 80,
+      display: 'flex',
+      alignItems: 'center',
+      position: 'relative',
+      borderBottom: '1px solid var(--line)',
+    }}>
+      {/* Heavy grid */}
+      <div aria-hidden style={{
+        position: 'absolute',
+        inset: 0,
+        opacity: 0.5,
+        backgroundImage: 'linear-gradient(to right, var(--line-soft) 1px, transparent 1px), linear-gradient(to bottom, var(--line-soft) 1px, transparent 1px)',
+        backgroundSize: '120px 120px',
+      }}/>
+      <div className="samase-container" style={{ position: 'relative', width: '100%' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 64,
+          alignItems: 'end',
+        }} className="arch-grid">
+          <div>
+            <Reveal>
+              <div className="samase-mono" style={{
+                color: 'var(--ink-mute)',
+                marginBottom: 32,
+                padding: '6px 12px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--line)',
+                display: 'inline-block',
+              }}>
+                {h.kicker}
+              </div>
+            </Reveal>
+            <Reveal delay={100}>
+              <h1 style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: 'clamp(44px, 6.4vw, 104px)',
+                fontWeight: 500,
+                margin: 0,
+                color: 'var(--ink)',
+                letterSpacing: '-0.03em',
+                lineHeight: 0.95,
+              }}>
+                {h.titleTop}<br/>
+                {h.titleMid}<br/>
+                {h.titleBot}
+              </h1>
+            </Reveal>
+          </div>
+          <Reveal delay={180}>
+            <div style={{
+              padding: 32,
+              border: '1px solid var(--line)',
+              background: 'var(--bg-card)',
+            }}>
+              <p style={{
+                margin: 0,
+                color: 'var(--ink-soft)',
+                fontSize: 16,
+                lineHeight: 1.7,
+              }}>
+                {h.lede}
+              </p>
+              <div style={{
+                marginTop: 28,
+                paddingTop: 22,
+                borderTop: '1px solid var(--line)',
+                display: 'flex',
+                gap: 40,
+              }}>
+                <MetaBlock label={h.meta1Label} value={h.meta1Value} />
+                <MetaBlock label={h.meta2Label} value={h.meta2Value} />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+      <style>{`
+        @media (max-width: 860px) {
+          .arch-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+function CinematicHero() {
+  const h = window.SAMASE.hero;
+  const S = window.SAMASE;
+  const active = S.founding.batches.find(b => b.status === 'active') || S.founding.batches[0];
+  const pct = Math.round((active.slotsTaken / active.slotsTotal) * 100);
+  return (
+    <section id="section-hero" style={{
+      minHeight: '110vh',
+      padding: '120px 0 80px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      position: 'relative',
+      background: 'var(--bg)',
+      overflow: 'hidden',
+    }}>
+      {/* Gold ambient corner */}
+      <div aria-hidden style={{
+        position: 'absolute',
+        top: '50%', right: '-20%',
+        width: '60%', height: '60%',
+        background: 'radial-gradient(ellipse at center, var(--gold) 0%, transparent 65%)',
+        opacity: 0.1,
+        transform: 'translateY(-50%)',
+        pointerEvents: 'none',
+      }}/>
+      <div className="samase-container" style={{ position: 'relative', width: '100%', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 48 }}>
+        <Reveal>
+          <div className="samase-mono" style={{ color: 'var(--ink-mute)' }}>
+            <span style={{
+              display: 'inline-block',
+              width: 6, height: 6,
+              borderRadius: '50%',
+              background: 'var(--gold)',
+              marginRight: 10,
+              verticalAlign: 'middle',
+              animation: 'pulse 2.4s ease-in-out infinite',
+            }} />
+            {h.kicker} · {S.brand.opening}, {S.brand.city}
+          </div>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <h1 className="samase-display" style={{
+            fontSize: 'clamp(56px, 11vw, 172px)',
+            fontWeight: 300,
+            margin: 0,
+            color: 'var(--ink)',
+            letterSpacing: '-0.04em',
+            lineHeight: 0.92,
+          }}>
+            {h.titleTop}<br/>
+            <span className="samase-serif-italic" style={{ color: 'var(--accent)' }}>{h.titleMid}</span><br/>
+            {h.titleBot}
+          </h1>
+        </Reveal>
+
+        <Reveal delay={200}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr auto',
+            gap: 48,
+            alignItems: 'end',
+          }} className="cine-bottom">
+            <p style={{
+              margin: 0,
+              color: 'var(--ink-soft)',
+              fontSize: 18,
+              lineHeight: 1.65,
+              maxWidth: 540,
+            }}>
+              {h.lede}
+            </p>
+            <div style={{ minWidth: 260 }}>
+              <div className="samase-mono" style={{ color: 'var(--ink-mute)', marginBottom: 8, fontSize: 9 }}>
+                Gelombang aktif · {active.label}
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontFamily: 'var(--font-display)' }}>
+                <span style={{ fontSize: 28, color: 'var(--ink)' }}>{active.slotsTaken}<span style={{ opacity: 0.45 }}>/{active.slotsTotal}</span></span>
+                <span className="samase-mono" style={{ color: 'var(--gold)', alignSelf: 'flex-end' }}>{pct}%</span>
+              </div>
+              <div style={{ height: 2, background: 'var(--line)', overflow: 'hidden' }}>
+                <div style={{ height: '100%', width: `${pct}%`, background: 'var(--gold)' }} />
+              </div>
+              <a href="#section-form" style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+                marginTop: 20,
+                padding: '14px 22px',
+                background: 'var(--ink)',
+                color: 'var(--bg)',
+                borderRadius: 999,
+                fontSize: 12,
+              }}>
+                <span className="samase-mono" style={{fontSize: 10}}>Amankan Slot</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+
+      <div className="samase-container" style={{ position: 'relative', marginTop: 48, paddingTop: 24, borderTop: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
+        <span className="samase-serif-italic" style={{ color: 'var(--ink-soft)', fontSize: 16 }}>{h.footer}</span>
+        <a href="#section-philosophy" className="samase-mono" style={{ color: 'var(--ink-mute)' }}>Scroll ↓</a>
+      </div>
+
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(0.85); }
+        }
+        @media (max-width: 860px) {
+          .cine-bottom { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+// Main layout renderer
+function LayoutRenderer({ layout }) {
+  switch (layout) {
+    case 'zen': return <LayoutZen />;
+    case 'architectural': return <LayoutArchitectural />;
+    case 'hero': return <LayoutHeroFocus />;
+    case 'editorial':
+    default: return <LayoutEditorial />;
+  }
+}
+
+Object.assign(window, {
+  LayoutEditorial, LayoutZen, LayoutArchitectural, LayoutHeroFocus,
+  ZenHero, ArchHero, CinematicHero, LayoutRenderer,
+});
+</script>
+  <script type="text/babel">// SAMASE — Admin / CMS Panel ("Kelola Landing Page")
+// Always available in production via a small floating pill in the bottom-right.
+// Click the pill → prompts for admin passcode → opens full CMS panel.
+// Also responds to the design-tool Tweaks toggle protocol for in-editor use.
+
+const ADMIN_PASSCODE = /*EDITMODE-PASSCODE*/ 'samase2026' /*EDITMODE-PASSCODE-END*/;
+// ^ adjustable via CMS later; change this string to lock the panel.
+
+function TweaksPanel({ state, update }) {
+  // Two ways to activate:
+  //  1. The design tool's "Tweaks" toggle (dispatches custom events)
+  //  2. Clicking the floating "Kelola" pill + entering passcode
+  const [tweaksActive, setTweaksActive] = React.useState(false);
+  const [adminUnlocked, setAdminUnlocked] = React.useState(() => {
+    try { return sessionStorage.getItem('samase_admin') === 'ok'; } catch(_) { return false; }
+  });
+  const [panelOpen, setPanelOpen] = React.useState(true);
+  const [showLogin, setShowLogin] = React.useState(false);
+  const [tab, setTab] = React.useState('visual');
+
+  // Design-tool Tweaks protocol
+  React.useEffect(() => {
+    const onActivate = () => setTweaksActive(true);
+    const onDeactivate = () => setTweaksActive(false);
+    window.addEventListener('designer2:tweaks-activate', onActivate);
+    window.addEventListener('designer2:tweaks-deactivate', onDeactivate);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => {
+      window.removeEventListener('designer2:tweaks-activate', onActivate);
+      window.removeEventListener('designer2:tweaks-deactivate', onDeactivate);
+    };
+  }, []);
+
+  // Keyboard shortcut: Cmd/Ctrl+Shift+K toggles the pill directly
+  React.useEffect(() => {
+    const onKey = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.shiftKey && (e.key === 'K' || e.key === 'k')) {
+        e.preventDefault();
+        if (adminUnlocked) {
+          setPanelOpen(o => !o);
+        } else {
+          setShowLogin(true);
+        }
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [adminUnlocked]);
+
+  const active = tweaksActive || adminUnlocked;
+
+  // Layouts, palettes, scarcity options
+  const layouts = [
+    { id: 'editorial',     label: 'Editorial',     desc: 'Magazine, serif-forward' },
+    { id: 'zen',           label: 'Zen Minimal',   desc: 'Centered, ultra calm' },
+    { id: 'architectural', label: 'Architectural', desc: 'Heavy grid, sans-serif' },
+    { id: 'hero',          label: 'Hero-Focus',    desc: 'Cinematic, progress in hero' },
+  ];
+  const palettes = [
+    { id: 'warm',  label: 'Warm',  desc: 'Cream + terracotta (brand)', swatch: ['#F2EEE5', '#A94E2C', '#C68B5E'] },
+    { id: 'deep',  label: 'Deep',  desc: 'Editorial dark + sage',      swatch: ['#141414', '#C2A57F', '#A8D0BF'] },
+    { id: 'stone', label: 'Stone', desc: 'Cool modernist neutral',     swatch: ['#F3F3F1', '#3D4247', '#8E8474'] },
+  ];
+  const scarcities = [
+    { id: 'hard',   label: 'Hard Quota',    desc: 'Tampilkan angka: "X/Y Visionary terisi"' },
+    { id: 'soft',   label: 'Soft Scarcity', desc: 'Tanpa angka, hanya countdown' },
+    { id: 'hybrid', label: 'Hybrid',        desc: '"X+ applicants" + deadline' },
+  ];
+  const tabs = [
+    { id: 'visual',    label: 'Visual' },
+    { id: 'batches',   label: 'Batches' },
+    { id: 'copy',      label: 'Copy' },
+    { id: 'facilities', label: 'Fasilitas' },
+    { id: 'coaches',   label: 'Coach' },
+    { id: 'brand',     label: 'Brand' },
+  ];
+
+  // ============ Render ============
+
+  // Login modal
+  if (showLogin && !adminUnlocked) {
+    return (
+      <LoginModal
+        onCancel={() => setShowLogin(false)}
+        onSuccess={() => {
+          try { sessionStorage.setItem('samase_admin', 'ok'); } catch(_) {}
+          setAdminUnlocked(true);
+          setShowLogin(false);
+          setPanelOpen(true);
+        }}
+      />
+    );
+  }
+
+  // Not active = show compact pill (for site owner)
+  if (!active) {
+    return (
+      <AdminPill onClick={() => setShowLogin(true)} />
+    );
+  }
+
+  // Active = show full panel
+  return (
+    <>
+      {adminUnlocked && !panelOpen && (
+        <AdminPill open onClick={() => setPanelOpen(true)} />
+      )}
+      {panelOpen && (
+        <AdminPanel
+          state={state}
+          update={update}
+          tab={tab}
+          setTab={setTab}
+          tabs={tabs}
+          layouts={layouts}
+          palettes={palettes}
+          scarcities={scarcities}
+          onClose={() => {
+            if (adminUnlocked) setPanelOpen(false);
+            else setTweaksActive(false);
+          }}
+          onLogout={adminUnlocked ? () => {
+            try { sessionStorage.removeItem('samase_admin'); } catch(_) {}
+            setAdminUnlocked(false);
+            setPanelOpen(false);
+          } : null}
+        />
+      )}
+    </>
+  );
+}
+
+// ============ Admin floating pill ============
+function AdminPill({ onClick, open }) {
+  const [hover, setHover] = React.useState(false);
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        position: 'fixed',
+        bottom: 20,
+        right: 20,
+        zIndex: 10000,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+        padding: '12px 18px',
+        background: 'rgba(28,26,23,0.92)',
+        color: '#F2EEE5',
+        border: 'none',
+        borderRadius: 999,
+        cursor: 'pointer',
+        fontFamily: 'var(--font-mono, monospace)',
+        fontSize: 10,
+        letterSpacing: '0.14em',
+        textTransform: 'uppercase',
+        backdropFilter: 'blur(8px)',
+        boxShadow: hover
+          ? '0 14px 40px -12px rgba(28,26,23,0.5)'
+          : '0 8px 24px -8px rgba(28,26,23,0.35)',
+        transition: 'all 200ms',
+        transform: hover ? 'translateY(-1px)' : 'none',
+      }}
+      title="Admin: Kelola Landing Page (Ctrl/Cmd+Shift+K)"
+    >
+      <span style={{
+        width: 7, height: 7, borderRadius: '50%',
+        background: '#E8B88A',
+        boxShadow: '0 0 8px #E8B88A',
+      }} />
+      <span>{open ? 'Admin' : 'Kelola'}</span>
+    </button>
+  );
+}
+
+// ============ Login modal ============
+function LoginModal({ onCancel, onSuccess }) {
+  const [pw, setPw] = React.useState('');
+  const [err, setErr] = React.useState(false);
+  const submit = (e) => {
+    e && e.preventDefault();
+    if (pw === ADMIN_PASSCODE) {
+      onSuccess();
+    } else {
+      setErr(true);
+      setTimeout(() => setErr(false), 2000);
+    }
+  };
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 10001,
+      background: 'rgba(28,26,23,0.55)',
+      backdropFilter: 'blur(10px)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      fontFamily: 'var(--font-body, system-ui)',
+    }}
+    onClick={onCancel}
+    >
+      <form
+        onClick={(e) => e.stopPropagation()}
+        onSubmit={submit}
+        style={{
+          background: '#FFFFFF',
+          color: '#1C1A17',
+          borderRadius: 12,
+          padding: 32,
+          width: 360,
+          maxWidth: '90vw',
+          boxShadow: '0 40px 80px -20px rgba(0,0,0,0.35)',
+        }}
+      >
+        <div style={{
+          fontFamily: 'var(--font-mono, monospace)',
+          fontSize: 10,
+          letterSpacing: '0.18em',
+          textTransform: 'uppercase',
+          color: '#7A6A5A',
+          marginBottom: 14,
+        }}>
+          SAMASE · Admin Panel
+        </div>
+        <h3 style={{
+          margin: '0 0 8px 0',
+          fontFamily: 'var(--font-display, Georgia, serif)',
+          fontSize: 26,
+          fontWeight: 400,
+        }}>
+          Kelola Landing Page
+        </h3>
+        <p style={{
+          margin: '0 0 22px 0',
+          fontSize: 13,
+          color: '#7A6A5A',
+          lineHeight: 1.55,
+        }}>
+          Masukkan passcode untuk mengubah isi landing page — layout, palette, kuota batch, copy, tim coach, dan galeri fasilitas.
+        </p>
+        <input
+          type="password"
+          value={pw}
+          onChange={(e) => setPw(e.target.value)}
+          autoFocus
+          placeholder="Admin passcode"
+          style={{
+            width: '100%',
+            padding: '12px 14px',
+            fontSize: 14,
+            border: `1px solid ${err ? '#A94E2C' : '#E3DCCB'}`,
+            borderRadius: 6,
+            background: '#F8F5EF',
+            color: '#1C1A17',
+            outline: 'none',
+            fontFamily: 'var(--font-mono, monospace)',
+            letterSpacing: '0.1em',
+          }}
+        />
+        {err && (
+          <div style={{ color: '#A94E2C', fontSize: 12, marginTop: 8 }}>
+            Passcode salah. Coba lagi.
+          </div>
+        )}
+        <div style={{
+          display: 'flex', gap: 10, marginTop: 20,
+          justifyContent: 'flex-end',
+        }}>
+          <button
+            type="button"
+            onClick={onCancel}
+            style={{
+              padding: '10px 16px',
+              background: 'transparent',
+              color: '#7A6A5A',
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: 13,
+              fontFamily: 'inherit',
+            }}
+          >
+            Batal
+          </button>
+          <button
+            type="submit"
+            style={{
+              padding: '10px 20px',
+              background: '#A94E2C',
+              color: '#F2EEE5',
+              border: 'none',
+              borderRadius: 999,
+              cursor: 'pointer',
+              fontSize: 13,
+              fontFamily: 'inherit',
+              fontWeight: 500,
+            }}
+          >
+            Masuk →
+          </button>
+        </div>
+        <div style={{
+          marginTop: 24, paddingTop: 16,
+          borderTop: '1px solid #EDE7D9',
+          fontSize: 10,
+          color: '#A68D6F',
+          fontFamily: 'var(--font-mono, monospace)',
+          letterSpacing: '0.05em',
+        }}>
+          Default passcode: <b>samase2026</b> · ganti di <code>src/TweaksPanel.js</code>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+// ============ Full Admin Panel ============
+function AdminPanel({ state, update, tab, setTab, tabs, layouts, palettes, scarcities, onClose, onLogout }) {
+  return (
+    <div style={{
+      position: 'fixed',
+      bottom: 20, right: 20,
+      zIndex: 10000,
+      fontFamily: 'var(--font-body, system-ui)',
+    }}>
+      <div style={{
+        background: '#FFFFFF',
+        color: '#1C1A17',
+        border: '1px solid #E3DCCB',
+        borderRadius: 14,
+        overflow: 'hidden',
+        width: 380,
+        maxHeight: '85vh',
+        display: 'flex',
+        flexDirection: 'column',
+        boxShadow: '0 32px 80px -24px rgba(0,0,0,0.35)',
+      }}>
+        {/* Header */}
+        <div style={{
+          padding: '14px 18px 12px',
+          borderBottom: '1px solid #EDE7D9',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          background: '#F8F5EF',
+        }}>
+          <div>
+            <div style={{
+              fontFamily: 'var(--font-mono, monospace)',
+              fontSize: 9,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: '#A68D6F',
+              marginBottom: 4,
+            }}>
+              SAMASE · Admin Panel
+            </div>
+            <div style={{
+              fontFamily: 'var(--font-display, serif)',
+              fontSize: 16,
+              color: '#1C1A17',
+              lineHeight: 1,
+            }}>
+              Kelola Landing Page
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: 6 }}>
+            {onLogout && (
+              <button
+                onClick={onLogout}
+                title="Logout"
+                style={iconBtn}
+              >⎋</button>
+            )}
+            <button
+              onClick={onClose}
+              title="Close"
+              style={iconBtn}
+            >×</button>
+          </div>
+        </div>
+
+        {/* Tabs */}
+        <div style={{
+          display: 'flex',
+          borderBottom: '1px solid #EDE7D9',
+          background: '#F8F5EF',
+          overflowX: 'auto',
+        }}>
+          {tabs.map(t => (
+            <button
+              key={t.id}
+              onClick={() => setTab(t.id)}
+              style={{
+                padding: '10px 14px',
+                background: tab === t.id ? '#FFFFFF' : 'transparent',
+                color: tab === t.id ? '#1C1A17' : '#7A6A5A',
+                border: 'none',
+                borderBottom: tab === t.id ? '2px solid #A94E2C' : '2px solid transparent',
+                fontSize: 10,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                fontFamily: 'var(--font-mono, monospace)',
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
+              }}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Body */}
+        <div style={{ padding: 16, overflowY: 'auto', flex: 1 }}>
+          {tab === 'visual' && (
+            <>
+              <SectionTitle>Layout</SectionTitle>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 20 }}>
+                {layouts.map(l => (
+                  <OptionRow key={l.id} active={state.layout === l.id} onClick={() => update({ layout: l.id })} label={l.label} desc={l.desc} />
+                ))}
+              </div>
+              <SectionTitle>Palette</SectionTitle>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                {palettes.map(p => (
+                  <OptionRow
+                    key={p.id}
+                    active={state.variant === p.id}
+                    onClick={() => update({ variant: p.id })}
+                    label={p.label}
+                    desc={p.desc}
+                    swatch={p.swatch}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+
+          {tab === 'batches' && (
+            <>
+              <SectionTitle>Mode Scarcity</SectionTitle>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 18 }}>
+                {scarcities.map(s => (
+                  <OptionRow key={s.id} active={state.scarcityMode === s.id} onClick={() => update({ scarcityMode: s.id })} label={s.label} desc={s.desc} />
+                ))}
+              </div>
+
+              <SectionTitle>Kuota Batch (live)</SectionTitle>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {state.batches.map((b, i) => (
+                  <BatchRow
+                    key={b.id}
+                    batch={b}
+                    onChange={(patch) => {
+                      const nb = [...state.batches];
+                      nb[i] = { ...b, ...patch };
+                      update({ batches: nb });
+                    }}
+                  />
+                ))}
+              </div>
+
+              <SectionTitle style={{ marginTop: 18 }}>Tanggal Penutupan</SectionTitle>
+              <input
+                type="date"
+                value={state.closingDate.slice(0, 10)}
+                onChange={(e) => update({ closingDate: e.target.value + 'T23:59:00+07:00' })}
+                style={adminInput}
+              />
+            </>
+          )}
+
+          {tab === 'copy' && (
+            <>
+              <SectionTitle>Hero</SectionTitle>
+              <TextInput label="Title · baris 1" value={state.heroTitleTop} onChange={(v) => update({ heroTitleTop: v })} />
+              <TextInput label="Title · baris 2 (italic)" value={state.heroTitleMid} onChange={(v) => update({ heroTitleMid: v })} />
+              <TextInput label="Title · baris 3" value={state.heroTitleBot} onChange={(v) => update({ heroTitleBot: v })} />
+              <TextArea label="Lede (paragraf pembuka)" value={state.heroLede} onChange={(v) => update({ heroLede: v })} />
+
+              <SectionTitle style={{ marginTop: 18 }}>Brand</SectionTitle>
+              <TextInput label="Grand Opening" value={state.opening} onChange={(v) => update({ opening: v })} />
+              <TextInput label="Kota / Lokasi" value={state.city} onChange={(v) => update({ city: v })} />
+            </>
+          )}
+
+          {tab === 'facilities' && (
+            <FacilityAdminTab />
+          )}
+
+          {tab === 'coaches' && (
+            <CoachAdminTab />
+          )}
+
+          {tab === 'brand' && (
+            <BrandAdminTab />
+          )}
+        </div>
+
+        {/* Footer */}
+        <div style={{
+          padding: '10px 16px',
+          borderTop: '1px solid #EDE7D9',
+          background: '#F8F5EF',
+        }}>
+          <div style={{
+            fontFamily: 'var(--font-mono, monospace)',
+            color: '#A68D6F',
+            fontSize: 9,
+            lineHeight: 1.5,
+          }}>
+            Tersimpan otomatis · <a href="Pricing.html" style={{ color: '#1C1A17', textDecoration: 'underline' }}>Pricing Page</a> · <kbd style={{ fontFamily: 'inherit', fontSize: 9 }}>Ctrl+Shift+K</kbd> untuk toggle
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============ Facility Admin tab ============
+function FacilityAdminTab() {
+  const facilities = (window.SAMASE && window.SAMASE.facilities && window.SAMASE.facilities.items) || [];
+  return (
+    <>
+      <SectionTitle>Fasilitas & Foto</SectionTitle>
+      <div style={{ fontSize: 11, color: '#7A6A5A', lineHeight: 1.55, marginBottom: 12 }}>
+        Slider foto saat ini memakai <b>placeholder</b>. Untuk ganti ke foto asli, upload ke folder <code>/brand/facilities/</code> lalu edit <code>src/content.js</code> → array <code>photos</code> di tiap facility.
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {facilities.map(f => (
+          <div key={f.n} style={{
+            padding: 10,
+            background: '#F8F5EF',
+            border: '1px solid #EDE7D9',
+            borderRadius: 6,
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+              <span style={{ fontSize: 12, color: '#1C1A17', fontWeight: 500 }}>{f.title}</span>
+              <span style={{ fontFamily: 'monospace', fontSize: 9, color: '#A68D6F' }}>
+                {f.photos?.length || 0} foto
+              </span>
+            </div>
+            {f.photos && f.photos.length > 0 && (
+              <div style={{ fontSize: 10, color: '#7A6A5A', marginTop: 6, fontFamily: 'monospace' }}>
+                {f.photos.map(p => p.label).join(' · ')}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+// ============ Coach Admin tab ============
+function CoachAdminTab() {
+  const team = (window.SAMASE && window.SAMASE.coach && window.SAMASE.coach.team) || [];
+  return (
+    <>
+      <SectionTitle>Tim Coach</SectionTitle>
+      <div style={{ fontSize: 11, color: '#7A6A5A', lineHeight: 1.55, marginBottom: 12 }}>
+        Untuk edit profil coach (nama, role, foto, bio, tags), ubah di <code>src/content.js</code> → <code>coach.team</code>. Untuk tambah foto asli, set <code>photo</code> ke URL gambar.
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {team.map(c => (
+          <div key={c.name} style={{
+            padding: 12,
+            background: '#F8F5EF',
+            border: '1px solid #EDE7D9',
+            borderRadius: 6,
+          }}>
+            <div style={{ fontSize: 13, color: '#1C1A17', fontWeight: 500, marginBottom: 2 }}>{c.name}</div>
+            <div style={{ fontFamily: 'monospace', fontSize: 9, color: '#A94E2C', marginBottom: 6 }}>
+              {c.role}
+            </div>
+            <div style={{ fontSize: 11, color: '#7A6A5A', lineHeight: 1.45, marginBottom: 8 }}>
+              {c.bio}
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+              {(c.tags || []).map((t, i) => (
+                <span key={i} style={{
+                  padding: '2px 7px', background: '#EDE7D9', color: '#7A6A5A',
+                  fontFamily: 'monospace', fontSize: 8, borderRadius: 999,
+                  letterSpacing: '0.05em',
+                }}>{t}</span>
+              ))}
+            </div>
+            <div style={{ marginTop: 8, fontFamily: 'monospace', fontSize: 9, color: '#A68D6F' }}>
+              Foto: {c.photo ? '✓ set' : '— placeholder'}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+// ============ Brand Admin tab — upload monogram/wordmark SVG ============
+function BrandAdminTab() {
+  const [monoSvg, setMonoSvg] = React.useState(() => {
+    try { return localStorage.getItem('samase_brand_monogram') || ''; } catch(_) { return ''; }
+  });
+  const [wordSvg, setWordSvg] = React.useState(() => {
+    try { return localStorage.getItem('samase_brand_wordmark') || ''; } catch(_) { return ''; }
+  });
+  const [msg, setMsg] = React.useState(null);
+
+  const handleFile = (kind) => (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    if (!/svg/i.test(file.type) && !/\.svg$/i.test(file.name)) {
+      setMsg({ kind: 'err', text: 'File harus format SVG.' });
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const svgText = ev.target.result;
+      try {
+        if (kind === 'monogram') {
+          localStorage.setItem('samase_brand_monogram', svgText);
+          setMonoSvg(svgText);
+        } else {
+          localStorage.setItem('samase_brand_wordmark', svgText);
+          setWordSvg(svgText);
+        }
+        // Trigger reload so the new logo takes effect everywhere
+        applyBrandOverrides();
+        setMsg({ kind: 'ok', text: `Logo ${kind} berhasil diupload. Refresh halaman untuk update semua lokasi.` });
+        setTimeout(() => setMsg(null), 4000);
+      } catch(err) {
+        setMsg({ kind: 'err', text: 'Gagal simpan: ' + err.message });
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  const clearLogo = (kind) => () => {
+    try {
+      localStorage.removeItem(kind === 'monogram' ? 'samase_brand_monogram' : 'samase_brand_wordmark');
+      if (kind === 'monogram') setMonoSvg(''); else setWordSvg('');
+      applyBrandOverrides();
+      setMsg({ kind: 'ok', text: 'Logo dikembalikan ke default. Refresh halaman.' });
+      setTimeout(() => setMsg(null), 3000);
+    } catch(_) {}
+  };
+
+  return (
+    <>
+      <SectionTitle>Upload Logo Resmi</SectionTitle>
+      <div style={{ fontSize: 11, color: '#7A6A5A', lineHeight: 1.55, marginBottom: 14 }}>
+        Upload file SVG dari logopack. Logo akan otomatis tersimpan di browser Anda dan tampil di seluruh landing page (navbar, footer, dll).
+      </div>
+
+      {/* Monogram uploader */}
+      <LogoUploadRow
+        label="Monogram (S² mark)"
+        svgText={monoSvg}
+        onFile={handleFile('monogram')}
+        onClear={clearLogo('monogram')}
+        kind="monogram"
+      />
+
+      {/* Wordmark uploader */}
+      <div style={{ marginTop: 14 }}>
+        <LogoUploadRow
+          label="Wordmark (SAMASE Sports Club)"
+          svgText={wordSvg}
+          onFile={handleFile('wordmark')}
+          onClear={clearLogo('wordmark')}
+          kind="wordmark"
+        />
+      </div>
+
+      {msg && (
+        <div style={{
+          marginTop: 14,
+          padding: '10px 12px',
+          borderRadius: 6,
+          fontSize: 11,
+          lineHeight: 1.5,
+          background: msg.kind === 'err' ? '#FBE9E0' : '#E8F0E5',
+          color: msg.kind === 'err' ? '#8A3E20' : '#355C3A',
+          border: `1px solid ${msg.kind === 'err' ? '#F0C4AF' : '#C7D6BC'}`,
+        }}>
+          {msg.text}
+        </div>
+      )}
+
+      <div style={{
+        marginTop: 18,
+        padding: 12,
+        background: '#F8F5EF',
+        border: '1px dashed #D8CFBE',
+        borderRadius: 6,
+        fontSize: 10,
+        color: '#7A6A5A',
+        lineHeight: 1.6,
+        fontFamily: 'var(--font-mono, monospace)',
+      }}>
+        <b style={{ color: '#1C1A17' }}>Tips:</b> SVG harus pakai <code>fill="currentColor"</code> agar warna ikut palette. Jika warna hard-coded (hitam / terracotta), tetap tampil dengan warna itu.
+      </div>
+    </>
+  );
+}
+
+function LogoUploadRow({ label, svgText, onFile, onClear, kind }) {
+  const inputRef = React.useRef(null);
+  const hasCustom = !!svgText;
+  return (
+    <div style={{
+      padding: 14,
+      background: '#F8F5EF',
+      border: '1px solid #EDE7D9',
+      borderRadius: 8,
+    }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
+        <span style={{
+          fontSize: 11,
+          color: '#1C1A17',
+          fontWeight: 600,
+          fontFamily: 'var(--font-body, system-ui)',
+        }}>{label}</span>
+        <span style={{
+          fontFamily: 'monospace',
+          fontSize: 9,
+          color: hasCustom ? '#A94E2C' : '#A68D6F',
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+        }}>
+          {hasCustom ? '✓ Custom' : 'Default'}
+        </span>
+      </div>
+
+      {/* Preview box */}
+      <div style={{
+        height: 70,
+        background: '#FFFFFF',
+        border: '1px solid #EDE7D9',
+        borderRadius: 4,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 10,
+        color: '#1C1A17',
+        overflow: 'hidden',
+        padding: 8,
+      }}>
+        {hasCustom ? (
+          <span
+            style={{ display: 'inline-flex', maxHeight: 54, maxWidth: '100%', color: '#1C1A17' }}
+            dangerouslySetInnerHTML={{
+              __html: svgText.replace(/<svg\b([^>]*)>/i, (m, a) => {
+                const cleaned = a.replace(/\swidth="[^"]*"/gi, '').replace(/\sheight="[^"]*"/gi, '');
+                return `<svg${cleaned} style="height:54px;width:auto;display:block">`;
+              }),
+            }}
+          />
+        ) : (
+          <span style={{ fontFamily: 'monospace', fontSize: 10, color: '#A68D6F' }}>
+            Menggunakan {kind === 'monogram' ? 'brand/monogram.svg' : 'brand/wordmark.svg'}
+          </span>
+        )}
+      </div>
+
+      <div style={{ display: 'flex', gap: 8 }}>
+        <input
+          ref={inputRef}
+          type="file"
+          accept=".svg,image/svg+xml"
+          onChange={onFile}
+          style={{ display: 'none' }}
+        />
+        <button
+          onClick={() => inputRef.current && inputRef.current.click()}
+          style={{
+            flex: 1,
+            padding: '8px 12px',
+            background: '#1C1A17',
+            color: '#F2EEE5',
+            border: 'none',
+            borderRadius: 999,
+            fontSize: 11,
+            cursor: 'pointer',
+            fontFamily: 'inherit',
+            letterSpacing: '0.05em',
+          }}
+        >
+          {hasCustom ? 'Ganti SVG' : 'Upload SVG'}
+        </button>
+        {hasCustom && (
+          <button
+            onClick={onClear}
+            style={{
+              padding: '8px 12px',
+              background: 'transparent',
+              color: '#7A6A5A',
+              border: '1px solid #D8CFBE',
+              borderRadius: 999,
+              fontSize: 11,
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+            }}
+            title="Kembali ke default"
+          >
+            Reset
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// Apply brand overrides from localStorage into window.SAMASE_LOGO
+// so SamaseMark components pick them up. Called on mount and on upload.
+function applyBrandOverrides() {
+  try {
+    const mono = localStorage.getItem('samase_brand_monogram');
+    const word = localStorage.getItem('samase_brand_wordmark');
+    const paths = {};
+    if (mono) {
+      // Turn the SVG text into a data URL so InlineSvg can fetch it
+      const blob = new Blob([mono], { type: 'image/svg+xml' });
+      paths.monogram = URL.createObjectURL(blob);
+    }
+    if (word) {
+      const blob = new Blob([word], { type: 'image/svg+xml' });
+      paths.wordmark = URL.createObjectURL(blob);
+    }
+    if (Object.keys(paths).length) {
+      window.SAMASE_LOGO = paths;
+    } else {
+      delete window.SAMASE_LOGO;
+    }
+    try { window.dispatchEvent(new Event('samase:logo-update')); } catch(_) {}
+  } catch(_) {}
+}
+
+// Apply on first load
+if (typeof window !== 'undefined') {
+  applyBrandOverrides();
+}
+
+// ============ Shared UI bits ============
+const iconBtn = {
+  width: 28, height: 28,
+  border: 'none', background: 'transparent',
+  color: '#7A6A5A', cursor: 'pointer',
+  fontSize: 18, lineHeight: 1,
+  borderRadius: 6,
+  display: 'flex', alignItems: 'center', justifyContent: 'center',
+};
+
+const adminInput = {
+  width: '100%',
+  padding: '8px 10px',
+  border: '1px solid #E3DCCB',
+  background: '#F8F5EF',
+  color: '#1C1A17',
+  fontFamily: 'var(--font-mono, monospace)',
+  fontSize: 11,
+  borderRadius: 4,
+  outline: 'none',
+};
+
+function SectionTitle({ children, style }) {
+  return (
+    <div style={{
+      fontFamily: 'var(--font-mono, monospace)',
+      color: '#7A6A5A',
+      marginBottom: 10,
+      padding: '0 2px',
+      fontSize: 9,
+      letterSpacing: '0.18em',
+      textTransform: 'uppercase',
+      ...style,
+    }}>
+      {children}
+    </div>
+  );
+}
+
+function OptionRow({ active, onClick, label, desc, swatch }) {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 12,
+        padding: '10px 12px',
+        background: active ? '#F8F5EF' : 'transparent',
+        border: active ? '1px solid #D8CFBE' : '1px solid transparent',
+        borderRadius: 6,
+        textAlign: 'left',
+        cursor: 'pointer',
+        transition: 'all 150ms',
+        width: '100%',
+        fontFamily: 'inherit',
+      }}
+    >
+      {swatch && (
+        <div style={{
+          display: 'flex',
+          borderRadius: 3,
+          overflow: 'hidden',
+          border: '1px solid #E3DCCB',
+          flexShrink: 0,
+        }}>
+          {swatch.map((c, i) => (
+            <div key={i} style={{ width: 10, height: 24, background: c }} />
+          ))}
+        </div>
+      )}
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{
+          fontSize: 12,
+          color: '#1C1A17',
+          fontWeight: 500,
+          marginBottom: desc ? 2 : 0,
+        }}>
+          {label}
+        </div>
+        {desc && (
+          <div style={{
+            fontFamily: 'var(--font-mono, monospace)',
+            fontSize: 9,
+            color: '#7A6A5A',
+            letterSpacing: '0.04em',
+          }}>
+            {desc}
+          </div>
+        )}
+      </div>
+      {active && <span style={{ color: '#A94E2C', fontSize: 14 }}>✓</span>}
+    </button>
+  );
+}
+
+function BatchRow({ batch, onChange }) {
+  const pct = Math.round((batch.slotsTaken / batch.slotsTotal) * 100);
+  return (
+    <div style={{
+      padding: '12px 14px',
+      background: '#F8F5EF',
+      borderRadius: 6,
+      border: '1px solid #EDE7D9',
+    }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
+        <span style={{
+          fontFamily: 'var(--font-mono, monospace)',
+          color: '#1C1A17',
+          fontSize: 10,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+        }}>{batch.label || batch.id}</span>
+        <span style={{
+          fontFamily: 'var(--font-mono, monospace)',
+          color: '#A94E2C',
+          fontSize: 11,
+          fontWeight: 500,
+        }}>{pct}%</span>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+        <NumInput label="Terisi" value={batch.slotsTaken} onChange={(n) => onChange({ slotsTaken: Math.max(0, Math.min(n, batch.slotsTotal)) })} />
+        <NumInput label="Total" value={batch.slotsTotal} onChange={(n) => onChange({ slotsTotal: Math.max(1, n) })} />
+      </div>
+
+      <div style={{ marginTop: 10 }}>
+        <div style={{
+          fontFamily: 'var(--font-mono, monospace)',
+          color: '#7A6A5A',
+          fontSize: 8,
+          marginBottom: 5,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+        }}>Status</div>
+        <div style={{ display: 'flex', gap: 4 }}>
+          {['active', 'upcoming', 'closed'].map(s => (
+            <button
+              key={s}
+              onClick={() => onChange({ status: s })}
+              style={{
+                flex: 1,
+                padding: '6px 6px',
+                background: batch.status === s ? '#1C1A17' : 'transparent',
+                color: batch.status === s ? '#F2EEE5' : '#7A6A5A',
+                border: `1px solid ${batch.status === s ? '#1C1A17' : '#D8CFBE'}`,
+                borderRadius: 4,
+                fontFamily: 'var(--font-mono, monospace)',
+                fontSize: 8,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+              }}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NumInput({ label, value, onChange }) {
+  return (
+    <label style={{ display: 'block' }}>
+      <div style={{
+        fontFamily: 'var(--font-mono, monospace)',
+        color: '#7A6A5A',
+        fontSize: 8,
+        marginBottom: 3,
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
+      }}>{label}</div>
+      <input
+        type="number"
+        value={value}
+        onChange={(e) => onChange(parseInt(e.target.value, 10) || 0)}
+        style={adminInput}
+      />
+    </label>
+  );
+}
+
+function TextInput({ label, value, onChange }) {
+  return (
+    <label style={{ display: 'block', marginBottom: 12 }}>
+      <div style={{
+        fontFamily: 'var(--font-mono, monospace)',
+        color: '#7A6A5A',
+        fontSize: 8,
+        marginBottom: 5,
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
+      }}>{label}</div>
+      <input
+        type="text"
+        value={value || ''}
+        onChange={(e) => onChange(e.target.value)}
+        style={{
+          ...adminInput,
+          fontFamily: 'var(--font-body, system-ui)',
+          fontSize: 12,
+          padding: '8px 10px',
+        }}
+      />
+    </label>
+  );
+}
+
+function TextArea({ label, value, onChange }) {
+  return (
+    <label style={{ display: 'block', marginBottom: 12 }}>
+      <div style={{
+        fontFamily: 'var(--font-mono, monospace)',
+        color: '#7A6A5A',
+        fontSize: 8,
+        marginBottom: 5,
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
+      }}>{label}</div>
+      <textarea
+        value={value || ''}
+        onChange={(e) => onChange(e.target.value)}
+        rows={4}
+        style={{
+          ...adminInput,
+          fontFamily: 'var(--font-body, system-ui)',
+          fontSize: 12,
+          padding: '8px 10px',
+          resize: 'vertical',
+          lineHeight: 1.5,
+        }}
+      />
+    </label>
+  );
+}
+
+Object.assign(window, { TweaksPanel });
+</script>
+  <script type="text/babel">// SAMASE — App root (expanded with CMS state)
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "variant": "warm",
+  "layout": "editorial",
+  "scarcityMode": "hard",
+  "heroTitleTop": "Ruang tenang",
+  "heroTitleMid": "untuk tubuh yang",
+  "heroTitleBot": "dijaga dengan niat.",
+  "heroLede": "SAMASE Sports Club — Exclusive Active Lifestyle Club. Modern, sophisticated, privacy-first. Klub gaya hidup aktif untuk mereka yang memilih bergerak tanpa tuntutan tampil.",
+  "opening": "Juli 2026",
+  "city": "Jakarta — Bintaro",
+  "closingDate": "2026-06-15T23:59:00+07:00",
+  "batches": [
+    { "id": "visionary", "slotsTaken": 58, "slotsTotal": 80, "status": "active" },
+    { "id": "pioneer",   "slotsTaken": 0,  "slotsTotal": 120, "status": "upcoming" },
+    { "id": "founder",   "slotsTaken": 0,  "slotsTotal": 150, "status": "upcoming" }
+  ]
+}/*EDITMODE-END*/;
+
+function App() {
+  // Load persisted state — merge with defaults
+  const [state, setState] = React.useState(() => {
+    try {
+      const raw = localStorage.getItem('samase_tweaks_v2');
+      if (raw) return { ...TWEAK_DEFAULTS, ...JSON.parse(raw) };
+    } catch(_) {}
+    return TWEAK_DEFAULTS;
+  });
+
+  // Apply variant class + layout class to body
+  React.useEffect(() => {
+    document.body.classList.remove('variant-warm', 'variant-deep', 'variant-stone');
+    document.body.classList.add('variant-' + state.variant);
+    document.body.classList.toggle('body-dark', state.variant === 'deep');
+
+    document.body.classList.remove('layout-editorial', 'layout-zen', 'layout-arch', 'layout-hero');
+    document.body.classList.add('layout-' + (state.layout === 'architectural' ? 'arch' : state.layout));
+
+    try {
+      localStorage.setItem('samase_tweaks_v2', JSON.stringify(state));
+    } catch(_) {}
+  }, [state]);
+
+  // Sync CMS state into window.SAMASE (so components re-read from global)
+  React.useEffect(() => {
+    const S = window.SAMASE;
+    S.hero.titleTop = state.heroTitleTop;
+    S.hero.titleMid = state.heroTitleMid;
+    S.hero.titleBot = state.heroTitleBot;
+    S.hero.lede = state.heroLede;
+    S.brand.opening = state.opening;
+    S.brand.city = state.city;
+    S.brand.closingDate = state.closingDate;
+    S.founding.scarcityMode = state.scarcityMode;
+    // Merge batch CMS fields into batch definitions (keep static perks/tagline)
+    state.batches.forEach((b, i) => {
+      if (S.founding.batches[i]) {
+        S.founding.batches[i].slotsTaken = b.slotsTaken;
+        S.founding.batches[i].slotsTotal = b.slotsTotal;
+        S.founding.batches[i].status = b.status;
+        // keep badge in sync with status
+        S.founding.batches[i].badge =
+          b.status === 'active' ? 'Sedang Dibuka' :
+          b.status === 'upcoming' ? 'Segera Dibuka' : 'Telah Ditutup';
+      }
+    });
+  }, [state]);
+
+  // Update helper
+  const update = React.useCallback((patch) => {
+    setState(prev => {
+      const next = { ...prev, ...patch };
+      // Persist via host postMessage (edits file)
+      try {
+        window.parent.postMessage({
+          type: '__edit_mode_set_keys',
+          edits: patch,
+        }, '*');
+      } catch(_) {}
+      return next;
+    });
+  }, []);
+
+  return (
+    <div key={state.layout + '-' + state.scarcityMode}>
+      <Navbar />
+      <main>
+        <LayoutRenderer layout={state.layout} />
+      </main>
+      <Footer />
+      <TweaksPanel state={state} update={update} />
+    </div>
+  );
+}
+
+window.App = App;
+</script>
+
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

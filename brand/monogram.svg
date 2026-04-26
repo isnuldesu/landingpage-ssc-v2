@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" aria-label="SAMASE">
+  <!--
+    SAMASE monogram — v3
+    Butterfly / bowtie mark: two mirrored rounded-triangle wings meeting
+    at a pinched central waist. Interior cutouts echo the S-curve without
+    reading as literal letters. Strong silhouette, readable at 16px.
+  -->
+  <defs>
+    <mask id="samase-mono-mask-v3">
+      <rect width="400" height="220" fill="black"/>
+
+      <!-- === LEFT WING — rounded trapezoid === -->
+      <path d="
+        M 200 110
+        L 70 30
+        A 22 22 0 0 0 40 52
+        L 40 168
+        A 22 22 0 0 0 70 190
+        L 200 110 Z
+      " fill="white"/>
+
+      <!-- === RIGHT WING — mirror === -->
+      <path d="
+        M 200 110
+        L 330 30
+        A 22 22 0 0 1 360 52
+        L 360 168
+        A 22 22 0 0 1 330 190
+        L 200 110 Z
+      " fill="white"/>
+
+      <!-- === Interior cut — left wing inner slot (S negative space) === -->
+      <path d="
+        M 90 80
+        L 175 110
+        L 90 140
+        A 12 12 0 0 1 80 128
+        L 80 92
+        A 12 12 0 0 1 90 80 Z
+      " fill="black"/>
+
+      <!-- === Interior cut — right wing inner slot === -->
+      <path d="
+        M 310 80
+        L 225 110
+        L 310 140
+        A 12 12 0 0 0 320 128
+        L 320 92
+        A 12 12 0 0 0 310 80 Z
+      " fill="black"/>
+
+      <!-- === Central waist seam — thin vertical negative === -->
+      <rect x="197" y="98" width="6" height="24" fill="black"/>
+    </mask>
+  </defs>
+
+  <rect width="400" height="220" fill="currentColor" mask="url(#samase-mono-mask-v3)"/>
+</svg>

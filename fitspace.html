@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAMASE Fitspace · Gym Privat di Bintaro</title>
+  <meta name="description" content="SAMASE Fitspace — gym dan studio untuk latihan rutin di Bintaro. Open gym, group class, private training, area khusus muslimah, dan Golden FitSpace untuk 50+. Bagian dari SAMASE Sports Club." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200..900;1,200..900&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Design tokens + skins -->
+  <link rel="stylesheet" href="src/tokens.css?v=7" />
+  <link rel="stylesheet" href="src/warm.css?v=5" />
+  <link rel="stylesheet" href="src/deep.css?v=5" />
+  <link rel="stylesheet" href="src/stone.css?v=5" />
+
+  <!-- React 18 + Babel (pinned) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    html, body { background: #F2EEE5; scroll-behavior: smooth; }
+    body.body-dark { background: #141414; }
+    body.variant-stone { background: #F3F3F1; }
+    #root { min-height: 100vh; }
+  </style>
+</head>
+<body class="variant-warm">
+  <div id="umbrella-nav-root"></div>
+  <div id="root"></div>
+
+  <!-- CMS store — must load BEFORE content.js -->
+  <script src="src/cms-store.js?v=4"></script>
+
+  <!-- Media store (for uploaded images resolution) -->
+  <script src="src/media-store.js?v=2"></script>
+
+  <!-- Demo photos loader (optional Unsplash seed, toggled via admin) -->
+  <script src="src/demo-photos.js?v=5"></script>
+
+  <!-- i18n helper -->
+  <script src="src/i18n.js?v=2"></script>
+
+  <!-- Content defaults -->
+  <script type="text/babel" src="src/content.js?v=15"></script>
+
+  <!-- Founding auto-assign logic (helper) -->
+  <script src="src/founding-logic.js?v=1"></script>
+
+  <!-- Brand -->
+  <script type="text/babel" src="src/SamaseMark.js?v=12"></script>
+
+  <!-- Sections -->
+  <script type="text/babel" src="src/sections.js?v=7"></script>
+  <script type="text/babel" src="src/sections2.js?v=7"></script>
+  <script type="text/babel" src="src/sections3.js?v=9"></script>
+  <script type="text/babel" src="src/sections4.js?v=2"></script>
+
+  <!-- AI Assistant -->
+  <script type="text/babel" src="src/ai-assistant.jsx?v=3"></script>
+
+  <!-- Photo-forward layout (editorial magazine) — defines PhotoSlot used by Cinematic too -->
+  <script type="text/babel" src="src/layout-photo.jsx?v=4"></script>
+
+  <!-- Cinematic sections (uses PhotoSlot) -->
+  <script type="text/babel" src="src/sections-cinematic.jsx?v=5"></script>
+
+  <!-- Layout orchestrator (must come AFTER variant sections) -->
+  <script type="text/babel" src="src/layouts.js?v=9"></script>
+
+  <!-- App -->
+  <script type="text/babel" src="src/App.js?v=22"></script>
+
+  <!-- Umbrella nav (shared with main brand) -->
+  <script type="text/babel" src="src/umbrella-app.jsx?v=2"></script>
+
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+    // Mount shared umbrella nav on top
+    const navRoot = ReactDOM.createRoot(document.getElementById('umbrella-nav-root'));
+    navRoot.render(<UmbrellaNav />);
+  </script>
+</body>
+</html>

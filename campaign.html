@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jadwalkan Postural Assessment · SAMASE Sports Club</title>
+  <meta name="description" content="Jadwalkan Postural Assessment bersama tim Bebascedera di SAMASE Sports Club. Titik awal untuk menentukan layanan yang paling sesuai: Fitspace, Physio, atau keduanya." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200..900;1,200..900&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="src/tokens.css?v=7" />
+  <link rel="stylesheet" href="src/warm.css?v=5" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      font-family: 'Inter Tight', system-ui, sans-serif;
+      background: #0A0706; color: #F2EEE5;
+      scroll-behavior: smooth;
+    }
+    #root { min-height: 100vh; }
+    .samase-mono { font-family: 'JetBrains Mono', monospace; }
+    .samase-display { font-family: 'Exo 2', 'Inter Tight', sans-serif; }
+    .samase-serif-italic { font-family: 'Exo 2', 'Inter Tight', sans-serif; font-style: italic; font-weight: 800; }
+    body { font-weight: 400; }
+    h1, h2, h3, h4 { font-family: 'Exo 2', 'Inter Tight', sans-serif; font-weight: 800; letter-spacing: -0.025em; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="src/cms-store.js?v=4"></script>
+  <script src="src/media-store.js?v=2"></script>
+  <script src="src/i18n.js?v=2"></script>
+  <script type="text/babel" src="src/content.js?v=15"></script>
+  <script type="text/babel" src="src/layout-photo.jsx?v=4"></script>
+  <script type="text/babel" src="src/umbrella-app.jsx?v=3"></script>
+  <script type="text/babel" src="src/admin-floating-link.jsx?v=1"></script>
+  <script type="text/babel" src="src/campaign-app.jsx?v=4"></script>
+
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<CampaignApp />);
+  </script>
+</body>
+</html>

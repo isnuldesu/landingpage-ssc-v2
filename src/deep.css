@@ -1,0 +1,23 @@
+/* Deep — dark editorial with sage/mint accent */
+body.variant-deep {
+  --bg: #141414;
+  --bg-elev: #1C1C1C;
+  --bg-card: #1F1F1E;
+  --ink: #F1ECE2;
+  --ink-soft: #C7BFB0;
+  --ink-mute: #8A8170;
+  --line: #2E2D2A;
+  --line-soft: #242321;
+  --accent: #C2A57F;
+  --accent-soft: #8E7757;
+  --gold: #D4B585;
+
+  /* Signature sections — sage/teal contrast for warmth */
+  --founding-bg: #2D4A44;         /* deep sage — calm counter */
+  --founding-bg-2: #1F3834;       /* sage deep */
+  --founding-ink: #EAE4D5;        /* warm cream text */
+  --founding-accent: #A8D0BF;     /* mint accent */
+  --footer-bg: #0E0E0E;
+  --form-cta: #A8D0BF;            /* mint CTA */
+  --form-cta-ink: #1C1A17;
+}
